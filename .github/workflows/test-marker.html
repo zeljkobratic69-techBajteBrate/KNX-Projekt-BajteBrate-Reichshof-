@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Marker Test - Standalone</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a2e;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        
+        #map-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: 3px solid gold;
+            margin: 20px auto;
+            cursor: crosshair;
+            background: #0f0f1e;
+        }
+        
+        #marker {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: #ef4444;
+            border: 5px solid white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: grab;
+            box-shadow: 0 0 40px rgba(239, 68, 68, 0.9);
+            z-index: 100;
+            transition: transform 0.2s ease;
+        }
+        
+        #marker:active {
+            cursor: grabbing;
+        }
+        
+        #marker::after {
+            content: '+';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .controls {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        .btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background: #2563eb;
+        }
+        
+        .info {
+            text-align: center;
+            font-size: 18px;
+            color: gold;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: gold;">🧪 Marker Test - Click & Drag</h1>
+    
+    <div class="info">
+        Position: <span id="pos-x">50.00</span>% X, <span id="pos-y">50.00</span>% Y
+    </div>
+    
+    <div id="map-container">
+        <div id="marker" style="left: 50%; top: 50%;"></div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="nudge(-1, 0)">⬅️ Links</button>
+        <button class="btn" onclick="nudge(1, 0)">➡️ Rechts</button>
+        <button class="btn" onclick="nudge(0, -1)">⬆️ Oben</button>
+        <button class="btn" onclick="nudge(0, 1)">⬇️ Unten</button>
+        <button class="btn" style="background: gold; color: black;" onclick="reset()">🎯 Reset</button>
+    </div>
+    
+    <div style="text-align: center; color: #94a3b8; margin: 20px;">
+        <strong>💡 Tipp:</strong> Klicke direkt auf die blaue Fläche oder ziehe den roten Marker!
+    </div>
+
+    <script>
+        const marker = document.getElementById('marker');
+        const container = document.getElementById('map-container');
+        const posX = document.getElementById('pos-x');
+        const posY = document.getElementById('pos-y');
+        
+        let currentX = 50;
+        let currentY = 50;
+        let isDragging = false;
+        
+        // DRAG START
+        marker.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            e.stopPropagation();
+        });
+        
+        // DRAG MOVE
+        container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            const rect = container.getBoundingClientRect();
+            currentX = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+            currentY = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+            updatePosition();
+        });
+        
+        // DRAG END
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+        
+        // DIRECT CLICK
+        container.addEventListener('click', (e) => {
+            if (e.target === marker) return;
+            
+            const rect = container.getBoundingClientRect();
+            currentX = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+            currentY = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+            updatePosition();
+            
+            // Visual feedback
+            marker.style.transform = 'translate(-50%, -50%) scale(1.3)';
+            setTimeout(() => {
+                marker.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 200);
+        });
+        
+        // UPDATE
+        function updatePosition() {
+            marker.style.left = currentX + '%';
+            marker.style.top = currentY + '%';
+            posX.textContent = currentX.toFixed(2);
+            posY.textContent = currentY.toFixed(2);
+        }
+        
+        // NUDGE
+        function nudge(dx, dy) {
+            currentX = Math.max(0, Math.min(100, currentX + dx));
+            currentY = Math.max(0, Math.min(100, currentY + dy));
+            updatePosition();
+        }
+        
+        // RESET
+        function reset() {
+            currentX = 50;
+            currentY = 50;
+            updatePosition();
+        }
+        
+        console.log('✅ Marker Test loaded successfully!');
+    </script>
+</body>
+</html>

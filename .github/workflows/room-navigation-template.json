@@ -1,0 +1,114 @@
+{
+  "TEMPLATE_COPY_THIS": {
+    "room_number": "XXX",
+    "floor": "X",
+    "section": "left/right/center",
+    "distance_from_elevator_steps": 0,
+    "distance_from_elevator_meters": 0,
+    "turn_sequence": ["right", "straight", "left"],
+    "landmarks_passed": ["room_XXX", "restroom", "fire_door"],
+    "final_position": "left/right",
+    "navigation_text": {
+      "de": "",
+      "en": "",
+      "es": ""
+    },
+    "coordinates": {
+      "x": 0,
+      "y": 0,
+      "source": "manual"
+    }
+  },
+  
+  "EXAMPLE_227": {
+    "room_number": "227",
+    "floor": "2",
+    "section": "right",
+    "distance_from_elevator_steps": 3,
+    "distance_from_elevator_meters": 15,
+    "turn_sequence": ["right", "straight", "left", "right"],
+    "landmarks_passed": ["room_217", "room_218", "room_225", "room_226"],
+    "final_position": "left",
+    "navigation_text": {
+      "de": "Zimmer 227: Nach 3 Schritten rechts abbiegen. Folgen Sie dem Flur geradeaus bis zum Ende, dann links. Nach 3 Metern, vorbei bei Zimmern 217 und 218, biegen Sie rechts ab. Gleich nach Zimmer 225 auf Ihrer linken Seite und Zimmer 226 auf Ihrer rechten Seite befindet sich Ihr Zimmer 227 links.",
+      "en": "Room 227: After 3 steps, turn right. Follow the corridor straight to the end, then left. After 3 meters, past rooms 217 and 218, turn right. Just after room 225 on your left and room 226 on your right, your room 227 is on the left.",
+      "es": "Habitación 227: Después de 3 pasos, gire a la derecha. Siga el pasillo recto hasta el final, luego a la izquierda. Después de 3 metros, pasando las habitaciones 217 y 218, gire a la derecha. Justo después de la habitación 225 a su izquierda y la habitación 226 a su derecha, su habitación 227 está a la izquierda."
+    },
+    "coordinates": {
+      "x": 68.5,
+      "y": 42.3,
+      "source": "manual"
+    }
+  },
+  
+  "INSTRUCTIONS": {
+    "title": "Kako koristiti ovaj template:",
+    "steps": [
+      "1. Kopirajte TEMPLATE_COPY_THIS blok",
+      "2. Zamijenite XXX sa brojem sobe (npr. 227)",
+      "3. Ispunite sva polja:",
+      "   - room_number: Broj sobe",
+      "   - floor: Sprat (1-6)",
+      "   - section: left (lijevo od lifta), right (desno), center",
+      "   - distance_from_elevator_steps: Broj koraka od lifta do sobe",
+      "   - distance_from_elevator_meters: Približna udaljenost u metrima",
+      "   - turn_sequence: Niz skretanja ['right', 'left', 'straight']",
+      "   - landmarks_passed: Orijentiri na putu ['room_217', 'restroom', etc]",
+      "   - final_position: Gdje je soba na kraju ('left' ili 'right')",
+      "4. Napišite navigacijski tekst na 3 jezika (de, en, es)",
+      "5. Dodajte X,Y koordinate sa mape (0-100%)",
+      "6. Kopirajte gotov blok u voice-navigation-system.json → detailed_room_routes",
+      "7. Testirajte sa: buildCompleteVoiceNavigation('227', 'de')"
+    ],
+    "tips": [
+      "💡 Koristite konzistentne fraze iz priručnika",
+      "📏 Izmjerite udaljenosti što preciznije",
+      "🔍 Navedite sve bitne orijentire (sobe, WC, vrata)",
+      "♿ Za pristupačne sobe dodajte accessibility: true",
+      "🎯 Za sobe na istom spratu možete kopirati i prilagoditi",
+      "🔄 Koristite +100/-100 dugmad za kopiranje markera na druge spratove"
+    ]
+  },
+  
+  "QUICK_PHRASES": {
+    "german": {
+      "elevator_exit": "Nach dem Verlassen des Fahrstuhls",
+      "turn_right": "rechts abbiegen",
+      "turn_left": "links abbiegen",
+      "go_straight": "geradeaus gehen",
+      "at_the_end": "am Ende des Flurs",
+      "past_room": "vorbei bei Zimmer {number}",
+      "on_left": "auf Ihrer linken Seite",
+      "on_right": "auf Ihrer rechten Seite",
+      "distance_meters": "nach {number} Metern",
+      "distance_steps": "nach {number} Schritten",
+      "your_room": "befindet sich Ihr Zimmer {number}"
+    },
+    "english": {
+      "elevator_exit": "After exiting the elevator",
+      "turn_right": "turn right",
+      "turn_left": "turn left",
+      "go_straight": "go straight",
+      "at_the_end": "at the end of the corridor",
+      "past_room": "past room {number}",
+      "on_left": "on your left",
+      "on_right": "on your right",
+      "distance_meters": "after {number} meters",
+      "distance_steps": "after {number} steps",
+      "your_room": "your room {number} is located"
+    },
+    "spanish": {
+      "elevator_exit": "Después de salir del ascensor",
+      "turn_right": "gire a la derecha",
+      "turn_left": "gire a la izquierda",
+      "go_straight": "siga recto",
+      "at_the_end": "al final del pasillo",
+      "past_room": "pasando la habitación {number}",
+      "on_left": "a su izquierda",
+      "on_right": "a su derecha",
+      "distance_meters": "después de {number} metros",
+      "distance_steps": "después de {number} pasos",
+      "your_room": "su habitación {number} está"
+    }
+  }
+}

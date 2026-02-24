@@ -1,0 +1,3850 @@
+{
+  "100": {
+    "id": "100",
+    "roomNumber": "100",
+    "oldNumber": "107",
+    "floor": "1",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "107"
+    ],
+    "x": 8,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "101": {
+    "id": "101",
+    "roomNumber": "101",
+    "oldNumber": "108",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "108"
+    ],
+    "x": 10.4,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "102": {
+    "id": "102",
+    "roomNumber": "102",
+    "oldNumber": "109",
+    "floor": "1",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "109"
+    ],
+    "x": 12.8,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "103": {
+    "id": "103",
+    "roomNumber": "103",
+    "oldNumber": "151",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "151"
+    ],
+    "x": 15.2,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "104": {
+    "id": "104",
+    "roomNumber": "104",
+    "oldNumber": "116",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "116"
+    ],
+    "x": 17.6,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "105": {
+    "id": "105",
+    "roomNumber": "105",
+    "oldNumber": "150",
+    "floor": "1",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "150"
+    ],
+    "x": 20,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "106": {
+    "id": "106",
+    "roomNumber": "106",
+    "oldNumber": "149",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "149"
+    ],
+    "x": 22.4,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "107": {
+    "id": "107",
+    "roomNumber": "107",
+    "oldNumber": "117",
+    "floor": "1",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "117"
+    ],
+    "x": 24.8,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "108": {
+    "id": "108",
+    "roomNumber": "108",
+    "oldNumber": "118",
+    "floor": "1",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "118"
+    ],
+    "x": 27.2,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "109": {
+    "id": "109",
+    "roomNumber": "109",
+    "oldNumber": "123",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "123"
+    ],
+    "x": 29.6,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "110": {
+    "id": "110",
+    "roomNumber": "110",
+    "oldNumber": "119",
+    "floor": "1",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "119"
+    ],
+    "x": 32,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "111": {
+    "id": "111",
+    "roomNumber": "111",
+    "oldNumber": "120",
+    "floor": "1",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "120"
+    ],
+    "x": 34.4,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "112": {
+    "id": "112",
+    "roomNumber": "112",
+    "oldNumber": "122",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "122"
+    ],
+    "x": 36.8,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "113": {
+    "id": "113",
+    "roomNumber": "113",
+    "oldNumber": "121",
+    "floor": "1",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "121"
+    ],
+    "x": 39.2,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "114": {
+    "id": "114",
+    "roomNumber": "114",
+    "oldNumber": "124",
+    "floor": "1",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "124"
+    ],
+    "x": 41.6,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "115": {
+    "id": "115",
+    "roomNumber": "115",
+    "oldNumber": "126",
+    "floor": "1",
+    "category": "Junior Suite",
+    "accessible": false,
+    "altIds": [
+      "126"
+    ],
+    "x": 44,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "116": {
+    "id": "116",
+    "roomNumber": "116",
+    "oldNumber": "147",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "147"
+    ],
+    "x": 46.4,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "117": {
+    "id": "117",
+    "roomNumber": "117",
+    "oldNumber": "141",
+    "floor": "1",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "141"
+    ],
+    "x": 48.8,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "118": {
+    "id": "118",
+    "roomNumber": "118",
+    "oldNumber": "142",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "142"
+    ],
+    "x": 51.2,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "119": {
+    "id": "119",
+    "roomNumber": "119",
+    "oldNumber": "146",
+    "floor": "1",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "146"
+    ],
+    "x": 53.6,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "120": {
+    "id": "120",
+    "roomNumber": "120",
+    "oldNumber": "143",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "143"
+    ],
+    "x": 56,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "121": {
+    "id": "121",
+    "roomNumber": "121",
+    "oldNumber": "144",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "144"
+    ],
+    "x": 58.4,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "122": {
+    "id": "122",
+    "roomNumber": "122",
+    "oldNumber": "145",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "145"
+    ],
+    "x": 60.8,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "123": {
+    "id": "123",
+    "roomNumber": "123",
+    "oldNumber": "140",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "140"
+    ],
+    "x": 63.2,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "124": {
+    "id": "124",
+    "roomNumber": "124",
+    "oldNumber": "139",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "139"
+    ],
+    "x": 65.6,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "125": {
+    "id": "125",
+    "roomNumber": "125",
+    "oldNumber": "127",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "127"
+    ],
+    "x": 68,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "126": {
+    "id": "126",
+    "roomNumber": "126",
+    "oldNumber": "138",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "138"
+    ],
+    "x": 70.4,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "127": {
+    "id": "127",
+    "roomNumber": "127",
+    "oldNumber": "137",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "137"
+    ],
+    "x": 72.8,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "128": {
+    "id": "128",
+    "roomNumber": "128",
+    "oldNumber": "128",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 75.2,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "129": {
+    "id": "129",
+    "roomNumber": "129",
+    "oldNumber": "136",
+    "floor": "1",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "136"
+    ],
+    "x": 77.6,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "130": {
+    "id": "130",
+    "roomNumber": "130",
+    "oldNumber": "129",
+    "floor": "1",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "129"
+    ],
+    "x": 80,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "131": {
+    "id": "131",
+    "roomNumber": "131",
+    "oldNumber": "134",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "134"
+    ],
+    "x": 82.4,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "132": {
+    "id": "132",
+    "roomNumber": "132",
+    "oldNumber": "130",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "130"
+    ],
+    "x": 84.8,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "133": {
+    "id": "133",
+    "roomNumber": "133",
+    "oldNumber": "131",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "131"
+    ],
+    "x": 87.2,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "134": {
+    "id": "134",
+    "roomNumber": "134",
+    "oldNumber": "133",
+    "floor": "1",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "133"
+    ],
+    "x": 89.6,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "135": {
+    "id": "135",
+    "roomNumber": "135",
+    "oldNumber": "132",
+    "floor": "1",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "132"
+    ],
+    "x": 92,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "200": {
+    "id": "200",
+    "roomNumber": "200",
+    "oldNumber": "212",
+    "floor": "2",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "212"
+    ],
+    "x": 8,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "201": {
+    "id": "201",
+    "roomNumber": "201",
+    "oldNumber": "201",
+    "floor": "2",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 9.71,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "202": {
+    "id": "202",
+    "roomNumber": "202",
+    "oldNumber": "202",
+    "floor": "2",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 11.43,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "203": {
+    "id": "203",
+    "roomNumber": "203",
+    "oldNumber": "203",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 13.14,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "204": {
+    "id": "204",
+    "roomNumber": "204",
+    "oldNumber": "204",
+    "floor": "2",
+    "category": "One Bedroom Suite",
+    "accessible": false,
+    "altIds": [],
+    "x": 14.86,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "205": {
+    "id": "205",
+    "roomNumber": "205",
+    "oldNumber": "205",
+    "floor": "2",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 16.57,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "206": {
+    "id": "206",
+    "roomNumber": "206",
+    "oldNumber": "211",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "211"
+    ],
+    "x": 18.29,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "207": {
+    "id": "207",
+    "roomNumber": "207",
+    "oldNumber": "206",
+    "floor": "2",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "206"
+    ],
+    "x": 20,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "208": {
+    "id": "208",
+    "roomNumber": "208",
+    "oldNumber": "207",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "207"
+    ],
+    "x": 21.71,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "209": {
+    "id": "209",
+    "roomNumber": "209",
+    "oldNumber": "210",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "210"
+    ],
+    "x": 23.43,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "210": {
+    "id": "210",
+    "roomNumber": "210",
+    "oldNumber": "208",
+    "floor": "2",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "208"
+    ],
+    "x": 25.14,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "211": {
+    "id": "211",
+    "roomNumber": "211",
+    "oldNumber": "209",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "209"
+    ],
+    "x": 26.86,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "212": {
+    "id": "212",
+    "roomNumber": "212",
+    "oldNumber": "214",
+    "floor": "2",
+    "category": "Accessible Medium Room",
+    "accessible": true,
+    "altIds": [
+      "214"
+    ],
+    "x": 28.57,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "213": {
+    "id": "213",
+    "roomNumber": "213",
+    "oldNumber": "215",
+    "floor": "2",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "215"
+    ],
+    "x": 30.29,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "214": {
+    "id": "214",
+    "roomNumber": "214",
+    "oldNumber": "251",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "251"
+    ],
+    "x": 32,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "215": {
+    "id": "215",
+    "roomNumber": "215",
+    "oldNumber": "216",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "216"
+    ],
+    "x": 33.71,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "216": {
+    "id": "216",
+    "roomNumber": "216",
+    "oldNumber": "250",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "250"
+    ],
+    "x": 35.43,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "217": {
+    "id": "217",
+    "roomNumber": "217",
+    "oldNumber": "249",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "249"
+    ],
+    "x": 37.14,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "218": {
+    "id": "218",
+    "roomNumber": "218",
+    "oldNumber": "217",
+    "floor": "2",
+    "category": "Accessible Medium Room",
+    "accessible": true,
+    "altIds": [
+      "217"
+    ],
+    "x": 38.86,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "219": {
+    "id": "219",
+    "roomNumber": "219",
+    "oldNumber": "218",
+    "floor": "2",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "218"
+    ],
+    "x": 40.57,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "220": {
+    "id": "220",
+    "roomNumber": "220",
+    "oldNumber": "223",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "223"
+    ],
+    "x": 42.29,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "221": {
+    "id": "221",
+    "roomNumber": "221",
+    "oldNumber": "219",
+    "floor": "2",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "219"
+    ],
+    "x": 44,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "222": {
+    "id": "222",
+    "roomNumber": "222",
+    "oldNumber": "220",
+    "floor": "2",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "220"
+    ],
+    "x": 45.71,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "223": {
+    "id": "223",
+    "roomNumber": "223",
+    "oldNumber": "222",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "222"
+    ],
+    "x": 47.43,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "224": {
+    "id": "224",
+    "roomNumber": "224",
+    "oldNumber": "221",
+    "floor": "2",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "221"
+    ],
+    "x": 49.14,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "225": {
+    "id": "225",
+    "roomNumber": "225",
+    "oldNumber": "224",
+    "floor": "2",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "224"
+    ],
+    "x": 50.86,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "226": {
+    "id": "226",
+    "roomNumber": "226",
+    "oldNumber": "248",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "248"
+    ],
+    "x": 52.57,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "227": {
+    "id": "227",
+    "roomNumber": "227",
+    "oldNumber": "225",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "225"
+    ],
+    "x": 54.29,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "228": {
+    "id": "228",
+    "roomNumber": "228",
+    "oldNumber": "247",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "247"
+    ],
+    "x": 56,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "229": {
+    "id": "229",
+    "roomNumber": "229",
+    "oldNumber": "226",
+    "floor": "2",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "226"
+    ],
+    "x": 57.71,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "230": {
+    "id": "230",
+    "roomNumber": "230",
+    "oldNumber": "241",
+    "floor": "2",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "241"
+    ],
+    "x": 59.43,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "231": {
+    "id": "231",
+    "roomNumber": "231",
+    "oldNumber": "242",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "242"
+    ],
+    "x": 61.14,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "232": {
+    "id": "232",
+    "roomNumber": "232",
+    "oldNumber": "246",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "246"
+    ],
+    "x": 62.86,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "233": {
+    "id": "233",
+    "roomNumber": "233",
+    "oldNumber": "243",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "243"
+    ],
+    "x": 64.57,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "234": {
+    "id": "234",
+    "roomNumber": "234",
+    "oldNumber": "244",
+    "floor": "2",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "244"
+    ],
+    "x": 66.29,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "235": {
+    "id": "235",
+    "roomNumber": "235",
+    "oldNumber": "245",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "245"
+    ],
+    "x": 68,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "236": {
+    "id": "236",
+    "roomNumber": "236",
+    "oldNumber": "240",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "240"
+    ],
+    "x": 69.71,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "237": {
+    "id": "237",
+    "roomNumber": "237",
+    "oldNumber": "239",
+    "floor": "2",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "239"
+    ],
+    "x": 71.43,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "238": {
+    "id": "238",
+    "roomNumber": "238",
+    "oldNumber": "227",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "227"
+    ],
+    "x": 73.14,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "239": {
+    "id": "239",
+    "roomNumber": "239",
+    "oldNumber": "238",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "238"
+    ],
+    "x": 74.86,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "240": {
+    "id": "240",
+    "roomNumber": "240",
+    "oldNumber": "228",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "228"
+    ],
+    "x": 76.57,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "241": {
+    "id": "241",
+    "roomNumber": "241",
+    "oldNumber": "237",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "237"
+    ],
+    "x": 78.29,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "242": {
+    "id": "242",
+    "roomNumber": "242",
+    "oldNumber": "236",
+    "floor": "2",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "236"
+    ],
+    "x": 80,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "243": {
+    "id": "243",
+    "roomNumber": "243",
+    "oldNumber": "229",
+    "floor": "2",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "229"
+    ],
+    "x": 81.71,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "244": {
+    "id": "244",
+    "roomNumber": "244",
+    "oldNumber": "235",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "235"
+    ],
+    "x": 83.43,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "245": {
+    "id": "245",
+    "roomNumber": "245",
+    "oldNumber": "234",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "234"
+    ],
+    "x": 85.14,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "246": {
+    "id": "246",
+    "roomNumber": "246",
+    "oldNumber": "230",
+    "floor": "2",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "230"
+    ],
+    "x": 86.86,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "247": {
+    "id": "247",
+    "roomNumber": "247",
+    "oldNumber": "231",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "231"
+    ],
+    "x": 88.57,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "248": {
+    "id": "248",
+    "roomNumber": "248",
+    "oldNumber": "233",
+    "floor": "2",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "233"
+    ],
+    "x": 90.29,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "249": {
+    "id": "249",
+    "roomNumber": "249",
+    "oldNumber": "232",
+    "floor": "2",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "232"
+    ],
+    "x": 92,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "300": {
+    "id": "300",
+    "roomNumber": "300",
+    "oldNumber": "312",
+    "floor": "3",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "312"
+    ],
+    "x": 8,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "301": {
+    "id": "301",
+    "roomNumber": "301",
+    "oldNumber": "301",
+    "floor": "3",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 9.71,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "302": {
+    "id": "302",
+    "roomNumber": "302",
+    "oldNumber": "302",
+    "floor": "3",
+    "category": "Junior Suite",
+    "accessible": false,
+    "altIds": [],
+    "x": 11.43,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "303": {
+    "id": "303",
+    "roomNumber": "303",
+    "oldNumber": "303",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 13.14,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "304": {
+    "id": "304",
+    "roomNumber": "304",
+    "oldNumber": "304",
+    "floor": "3",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 14.86,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "305": {
+    "id": "305",
+    "roomNumber": "305",
+    "oldNumber": "305",
+    "floor": "3",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 16.57,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "306": {
+    "id": "306",
+    "roomNumber": "306",
+    "oldNumber": "311",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "311"
+    ],
+    "x": 18.29,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "307": {
+    "id": "307",
+    "roomNumber": "307",
+    "oldNumber": "306",
+    "floor": "3",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "306"
+    ],
+    "x": 20,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "308": {
+    "id": "308",
+    "roomNumber": "308",
+    "oldNumber": "307",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "307"
+    ],
+    "x": 21.71,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "309": {
+    "id": "309",
+    "roomNumber": "309",
+    "oldNumber": "310",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "310"
+    ],
+    "x": 23.43,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "310": {
+    "id": "310",
+    "roomNumber": "310",
+    "oldNumber": "308",
+    "floor": "3",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "308"
+    ],
+    "x": 25.14,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "311": {
+    "id": "311",
+    "roomNumber": "311",
+    "oldNumber": "309",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "309"
+    ],
+    "x": 26.86,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "312": {
+    "id": "312",
+    "roomNumber": "312",
+    "oldNumber": "314",
+    "floor": "3",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "314"
+    ],
+    "x": 28.57,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "313": {
+    "id": "313",
+    "roomNumber": "313",
+    "oldNumber": "315",
+    "floor": "3",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "315"
+    ],
+    "x": 30.29,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "314": {
+    "id": "314",
+    "roomNumber": "314",
+    "oldNumber": "351",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "351"
+    ],
+    "x": 32,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "315": {
+    "id": "315",
+    "roomNumber": "315",
+    "oldNumber": "316",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "316"
+    ],
+    "x": 33.71,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "316": {
+    "id": "316",
+    "roomNumber": "316",
+    "oldNumber": "350",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "350"
+    ],
+    "x": 35.43,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "317": {
+    "id": "317",
+    "roomNumber": "317",
+    "oldNumber": "349",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "349"
+    ],
+    "x": 37.14,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "318": {
+    "id": "318",
+    "roomNumber": "318",
+    "oldNumber": "317",
+    "floor": "3",
+    "category": "Accessible Medium Room",
+    "accessible": true,
+    "altIds": [
+      "317"
+    ],
+    "x": 38.86,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "319": {
+    "id": "319",
+    "roomNumber": "319",
+    "oldNumber": "318",
+    "floor": "3",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "318"
+    ],
+    "x": 40.57,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "320": {
+    "id": "320",
+    "roomNumber": "320",
+    "oldNumber": "323",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "323"
+    ],
+    "x": 42.29,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "321": {
+    "id": "321",
+    "roomNumber": "321",
+    "oldNumber": "319",
+    "floor": "3",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "319"
+    ],
+    "x": 44,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "322": {
+    "id": "322",
+    "roomNumber": "322",
+    "oldNumber": "320",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "320"
+    ],
+    "x": 45.71,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "323": {
+    "id": "323",
+    "roomNumber": "323",
+    "oldNumber": "322",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "322"
+    ],
+    "x": 47.43,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "324": {
+    "id": "324",
+    "roomNumber": "324",
+    "oldNumber": "321",
+    "floor": "3",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "321"
+    ],
+    "x": 49.14,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "325": {
+    "id": "325",
+    "roomNumber": "325",
+    "oldNumber": "324",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "324"
+    ],
+    "x": 50.86,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "326": {
+    "id": "326",
+    "roomNumber": "326",
+    "oldNumber": "348",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "348"
+    ],
+    "x": 52.57,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "327": {
+    "id": "327",
+    "roomNumber": "327",
+    "oldNumber": "325",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "325"
+    ],
+    "x": 54.29,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "328": {
+    "id": "328",
+    "roomNumber": "328",
+    "oldNumber": "347",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "347"
+    ],
+    "x": 56,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "329": {
+    "id": "329",
+    "roomNumber": "329",
+    "oldNumber": "326",
+    "floor": "3",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "326"
+    ],
+    "x": 57.71,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "330": {
+    "id": "330",
+    "roomNumber": "330",
+    "oldNumber": "341",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "341"
+    ],
+    "x": 59.43,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "331": {
+    "id": "331",
+    "roomNumber": "331",
+    "oldNumber": "342",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "342"
+    ],
+    "x": 61.14,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "332": {
+    "id": "332",
+    "roomNumber": "332",
+    "oldNumber": "346",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "346"
+    ],
+    "x": 62.86,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "333": {
+    "id": "333",
+    "roomNumber": "333",
+    "oldNumber": "343",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "343"
+    ],
+    "x": 64.57,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "334": {
+    "id": "334",
+    "roomNumber": "334",
+    "oldNumber": "344",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "344"
+    ],
+    "x": 66.29,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "335": {
+    "id": "335",
+    "roomNumber": "335",
+    "oldNumber": "345",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "345"
+    ],
+    "x": 68,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "336": {
+    "id": "336",
+    "roomNumber": "336",
+    "oldNumber": "340",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "340"
+    ],
+    "x": 69.71,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "337": {
+    "id": "337",
+    "roomNumber": "337",
+    "oldNumber": "339",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "339"
+    ],
+    "x": 71.43,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "338": {
+    "id": "338",
+    "roomNumber": "338",
+    "oldNumber": "327",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "327"
+    ],
+    "x": 73.14,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "339": {
+    "id": "339",
+    "roomNumber": "339",
+    "oldNumber": "338",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "338"
+    ],
+    "x": 74.86,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "340": {
+    "id": "340",
+    "roomNumber": "340",
+    "oldNumber": "328",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "328"
+    ],
+    "x": 76.57,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "341": {
+    "id": "341",
+    "roomNumber": "341",
+    "oldNumber": "337",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "337"
+    ],
+    "x": 78.29,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "342": {
+    "id": "342",
+    "roomNumber": "342",
+    "oldNumber": "336",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "336"
+    ],
+    "x": 80,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "343": {
+    "id": "343",
+    "roomNumber": "343",
+    "oldNumber": "329",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "329"
+    ],
+    "x": 81.71,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "344": {
+    "id": "344",
+    "roomNumber": "344",
+    "oldNumber": "335",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "335"
+    ],
+    "x": 83.43,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "345": {
+    "id": "345",
+    "roomNumber": "345",
+    "oldNumber": "334",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "334"
+    ],
+    "x": 85.14,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "346": {
+    "id": "346",
+    "roomNumber": "346",
+    "oldNumber": "330",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "330"
+    ],
+    "x": 86.86,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "347": {
+    "id": "347",
+    "roomNumber": "347",
+    "oldNumber": "331",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "331"
+    ],
+    "x": 88.57,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "348": {
+    "id": "348",
+    "roomNumber": "348",
+    "oldNumber": "333",
+    "floor": "3",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "333"
+    ],
+    "x": 90.29,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "349": {
+    "id": "349",
+    "roomNumber": "349",
+    "oldNumber": "332",
+    "floor": "3",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "332"
+    ],
+    "x": 92,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "400": {
+    "id": "400",
+    "roomNumber": "400",
+    "oldNumber": "412",
+    "floor": "4",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "412"
+    ],
+    "x": 8,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "401": {
+    "id": "401",
+    "roomNumber": "401",
+    "oldNumber": "401",
+    "floor": "4",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 9.71,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "402": {
+    "id": "402",
+    "roomNumber": "402",
+    "oldNumber": "402",
+    "floor": "4",
+    "category": "Junior Suite",
+    "accessible": false,
+    "altIds": [],
+    "x": 11.43,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "403": {
+    "id": "403",
+    "roomNumber": "403",
+    "oldNumber": "403",
+    "floor": "4",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 13.14,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "404": {
+    "id": "404",
+    "roomNumber": "404",
+    "oldNumber": "404",
+    "floor": "4",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 14.86,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "405": {
+    "id": "405",
+    "roomNumber": "405",
+    "oldNumber": "405",
+    "floor": "4",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 16.57,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "406": {
+    "id": "406",
+    "roomNumber": "406",
+    "oldNumber": "411",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "411"
+    ],
+    "x": 18.29,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "407": {
+    "id": "407",
+    "roomNumber": "407",
+    "oldNumber": "406",
+    "floor": "4",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "406"
+    ],
+    "x": 20,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "408": {
+    "id": "408",
+    "roomNumber": "408",
+    "oldNumber": "407",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "407"
+    ],
+    "x": 21.71,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "409": {
+    "id": "409",
+    "roomNumber": "409",
+    "oldNumber": "410",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "410"
+    ],
+    "x": 23.43,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "410": {
+    "id": "410",
+    "roomNumber": "410",
+    "oldNumber": "408",
+    "floor": "4",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "408"
+    ],
+    "x": 25.14,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "411": {
+    "id": "411",
+    "roomNumber": "411",
+    "oldNumber": "409",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "409"
+    ],
+    "x": 26.86,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "412": {
+    "id": "412",
+    "roomNumber": "412",
+    "oldNumber": "414",
+    "floor": "4",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "414"
+    ],
+    "x": 28.57,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "413": {
+    "id": "413",
+    "roomNumber": "413",
+    "oldNumber": "415",
+    "floor": "4",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "415"
+    ],
+    "x": 30.29,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "414": {
+    "id": "414",
+    "roomNumber": "414",
+    "oldNumber": "451",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "451"
+    ],
+    "x": 32,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "415": {
+    "id": "415",
+    "roomNumber": "415",
+    "oldNumber": "416",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "416"
+    ],
+    "x": 33.71,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "416": {
+    "id": "416",
+    "roomNumber": "416",
+    "oldNumber": "450",
+    "floor": "4",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "450"
+    ],
+    "x": 35.43,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "417": {
+    "id": "417",
+    "roomNumber": "417",
+    "oldNumber": "449",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "449"
+    ],
+    "x": 37.14,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "418": {
+    "id": "418",
+    "roomNumber": "418",
+    "oldNumber": "417",
+    "floor": "4",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "417"
+    ],
+    "x": 38.86,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "419": {
+    "id": "419",
+    "roomNumber": "419",
+    "oldNumber": "418",
+    "floor": "4",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "418"
+    ],
+    "x": 40.57,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "420": {
+    "id": "420",
+    "roomNumber": "420",
+    "oldNumber": "423",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "423"
+    ],
+    "x": 42.29,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "421": {
+    "id": "421",
+    "roomNumber": "421",
+    "oldNumber": "419",
+    "floor": "4",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "419"
+    ],
+    "x": 44,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "422": {
+    "id": "422",
+    "roomNumber": "422",
+    "oldNumber": "420",
+    "floor": "4",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "420"
+    ],
+    "x": 45.71,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "423": {
+    "id": "423",
+    "roomNumber": "423",
+    "oldNumber": "422",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "422"
+    ],
+    "x": 47.43,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "424": {
+    "id": "424",
+    "roomNumber": "424",
+    "oldNumber": "421",
+    "floor": "4",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "421"
+    ],
+    "x": 49.14,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "425": {
+    "id": "425",
+    "roomNumber": "425",
+    "oldNumber": "424",
+    "floor": "4",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "424"
+    ],
+    "x": 50.86,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "426": {
+    "id": "426",
+    "roomNumber": "426",
+    "oldNumber": "448",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "448"
+    ],
+    "x": 52.57,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "427": {
+    "id": "427",
+    "roomNumber": "427",
+    "oldNumber": "425",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "425"
+    ],
+    "x": 54.29,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "428": {
+    "id": "428",
+    "roomNumber": "428",
+    "oldNumber": "447",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "447"
+    ],
+    "x": 56,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "429": {
+    "id": "429",
+    "roomNumber": "429",
+    "oldNumber": "426",
+    "floor": "4",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "426"
+    ],
+    "x": 57.71,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "430": {
+    "id": "430",
+    "roomNumber": "430",
+    "oldNumber": "441",
+    "floor": "4",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "441"
+    ],
+    "x": 59.43,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "431": {
+    "id": "431",
+    "roomNumber": "431",
+    "oldNumber": "442",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "442"
+    ],
+    "x": 61.14,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "432": {
+    "id": "432",
+    "roomNumber": "432",
+    "oldNumber": "446",
+    "floor": "4",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "446"
+    ],
+    "x": 62.86,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "433": {
+    "id": "433",
+    "roomNumber": "433",
+    "oldNumber": "443",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "443"
+    ],
+    "x": 64.57,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "434": {
+    "id": "434",
+    "roomNumber": "434",
+    "oldNumber": "444",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "444"
+    ],
+    "x": 66.29,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "435": {
+    "id": "435",
+    "roomNumber": "435",
+    "oldNumber": "445",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "445"
+    ],
+    "x": 68,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "436": {
+    "id": "436",
+    "roomNumber": "436",
+    "oldNumber": "440",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "440"
+    ],
+    "x": 69.71,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "437": {
+    "id": "437",
+    "roomNumber": "437",
+    "oldNumber": "439",
+    "floor": "4",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "439"
+    ],
+    "x": 71.43,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "438": {
+    "id": "438",
+    "roomNumber": "438",
+    "oldNumber": "427",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "427"
+    ],
+    "x": 73.14,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "439": {
+    "id": "439",
+    "roomNumber": "439",
+    "oldNumber": "438",
+    "floor": "4",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "438"
+    ],
+    "x": 74.86,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "440": {
+    "id": "440",
+    "roomNumber": "440",
+    "oldNumber": "428",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "428"
+    ],
+    "x": 76.57,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "441": {
+    "id": "441",
+    "roomNumber": "441",
+    "oldNumber": "437",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "437"
+    ],
+    "x": 78.29,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "442": {
+    "id": "442",
+    "roomNumber": "442",
+    "oldNumber": "436",
+    "floor": "4",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "436"
+    ],
+    "x": 80,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "443": {
+    "id": "443",
+    "roomNumber": "443",
+    "oldNumber": "429",
+    "floor": "4",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "429"
+    ],
+    "x": 81.71,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "444": {
+    "id": "444",
+    "roomNumber": "444",
+    "oldNumber": "435",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "435"
+    ],
+    "x": 83.43,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "445": {
+    "id": "445",
+    "roomNumber": "445",
+    "oldNumber": "434",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "434"
+    ],
+    "x": 85.14,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "446": {
+    "id": "446",
+    "roomNumber": "446",
+    "oldNumber": "430",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "430"
+    ],
+    "x": 86.86,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "447": {
+    "id": "447",
+    "roomNumber": "447",
+    "oldNumber": "431",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "431"
+    ],
+    "x": 88.57,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "448": {
+    "id": "448",
+    "roomNumber": "448",
+    "oldNumber": "433",
+    "floor": "4",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "433"
+    ],
+    "x": 90.29,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "449": {
+    "id": "449",
+    "roomNumber": "449",
+    "oldNumber": "432",
+    "floor": "4",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "432"
+    ],
+    "x": 92,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "500": {
+    "id": "500",
+    "roomNumber": "500",
+    "oldNumber": "512",
+    "floor": "5",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "512"
+    ],
+    "x": 8,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "501": {
+    "id": "501",
+    "roomNumber": "501",
+    "oldNumber": "501",
+    "floor": "5",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 9.71,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "502": {
+    "id": "502",
+    "roomNumber": "502",
+    "oldNumber": "502",
+    "floor": "5",
+    "category": "Junior Suite",
+    "accessible": false,
+    "altIds": [],
+    "x": 11.43,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "503": {
+    "id": "503",
+    "roomNumber": "503",
+    "oldNumber": "503",
+    "floor": "5",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 13.14,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "504": {
+    "id": "504",
+    "roomNumber": "504",
+    "oldNumber": "504",
+    "floor": "5",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 14.86,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "505": {
+    "id": "505",
+    "roomNumber": "505",
+    "oldNumber": "505",
+    "floor": "5",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 16.57,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "506": {
+    "id": "506",
+    "roomNumber": "506",
+    "oldNumber": "511",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "511"
+    ],
+    "x": 18.29,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "507": {
+    "id": "507",
+    "roomNumber": "507",
+    "oldNumber": "506",
+    "floor": "5",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "506"
+    ],
+    "x": 20,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "508": {
+    "id": "508",
+    "roomNumber": "508",
+    "oldNumber": "507",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "507"
+    ],
+    "x": 21.71,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "509": {
+    "id": "509",
+    "roomNumber": "509",
+    "oldNumber": "510",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "510"
+    ],
+    "x": 23.43,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "510": {
+    "id": "510",
+    "roomNumber": "510",
+    "oldNumber": "508",
+    "floor": "5",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "508"
+    ],
+    "x": 25.14,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "511": {
+    "id": "511",
+    "roomNumber": "511",
+    "oldNumber": "509",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "509"
+    ],
+    "x": 26.86,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "512": {
+    "id": "512",
+    "roomNumber": "512",
+    "oldNumber": "514",
+    "floor": "5",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "514"
+    ],
+    "x": 28.57,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "513": {
+    "id": "513",
+    "roomNumber": "513",
+    "oldNumber": "515",
+    "floor": "5",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "515"
+    ],
+    "x": 30.29,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "514": {
+    "id": "514",
+    "roomNumber": "514",
+    "oldNumber": "551",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "551"
+    ],
+    "x": 32,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "515": {
+    "id": "515",
+    "roomNumber": "515",
+    "oldNumber": "516",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "516"
+    ],
+    "x": 33.71,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "516": {
+    "id": "516",
+    "roomNumber": "516",
+    "oldNumber": "550",
+    "floor": "5",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "550"
+    ],
+    "x": 35.43,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "517": {
+    "id": "517",
+    "roomNumber": "517",
+    "oldNumber": "549",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "549"
+    ],
+    "x": 37.14,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "518": {
+    "id": "518",
+    "roomNumber": "518",
+    "oldNumber": "517",
+    "floor": "5",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "517"
+    ],
+    "x": 38.86,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "519": {
+    "id": "519",
+    "roomNumber": "519",
+    "oldNumber": "518",
+    "floor": "5",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "518"
+    ],
+    "x": 40.57,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "520": {
+    "id": "520",
+    "roomNumber": "520",
+    "oldNumber": "523",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "523"
+    ],
+    "x": 42.29,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "521": {
+    "id": "521",
+    "roomNumber": "521",
+    "oldNumber": "519",
+    "floor": "5",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "519"
+    ],
+    "x": 44,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "522": {
+    "id": "522",
+    "roomNumber": "522",
+    "oldNumber": "520",
+    "floor": "5",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "520"
+    ],
+    "x": 45.71,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "523": {
+    "id": "523",
+    "roomNumber": "523",
+    "oldNumber": "522",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "522"
+    ],
+    "x": 47.43,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "524": {
+    "id": "524",
+    "roomNumber": "524",
+    "oldNumber": "521",
+    "floor": "5",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "521"
+    ],
+    "x": 49.14,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "525": {
+    "id": "525",
+    "roomNumber": "525",
+    "oldNumber": "524",
+    "floor": "5",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "524"
+    ],
+    "x": 50.86,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "526": {
+    "id": "526",
+    "roomNumber": "526",
+    "oldNumber": "548",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "548"
+    ],
+    "x": 52.57,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "527": {
+    "id": "527",
+    "roomNumber": "527",
+    "oldNumber": "525",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "525"
+    ],
+    "x": 54.29,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "528": {
+    "id": "528",
+    "roomNumber": "528",
+    "oldNumber": "547",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "547"
+    ],
+    "x": 56,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "529": {
+    "id": "529",
+    "roomNumber": "529",
+    "oldNumber": "526",
+    "floor": "5",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "526"
+    ],
+    "x": 57.71,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "530": {
+    "id": "530",
+    "roomNumber": "530",
+    "oldNumber": "541",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "541"
+    ],
+    "x": 59.43,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "531": {
+    "id": "531",
+    "roomNumber": "531",
+    "oldNumber": "542",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "542"
+    ],
+    "x": 61.14,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "532": {
+    "id": "532",
+    "roomNumber": "532",
+    "oldNumber": "546",
+    "floor": "5",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "546"
+    ],
+    "x": 62.86,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "533": {
+    "id": "533",
+    "roomNumber": "533",
+    "oldNumber": "543",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "543"
+    ],
+    "x": 64.57,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "534": {
+    "id": "534",
+    "roomNumber": "534",
+    "oldNumber": "544",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "544"
+    ],
+    "x": 66.29,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "535": {
+    "id": "535",
+    "roomNumber": "535",
+    "oldNumber": "545",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "545"
+    ],
+    "x": 68,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "536": {
+    "id": "536",
+    "roomNumber": "536",
+    "oldNumber": "540",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "540"
+    ],
+    "x": 69.71,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "537": {
+    "id": "537",
+    "roomNumber": "537",
+    "oldNumber": "539",
+    "floor": "5",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "539"
+    ],
+    "x": 71.43,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "538": {
+    "id": "538",
+    "roomNumber": "538",
+    "oldNumber": "527",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "527"
+    ],
+    "x": 73.14,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "539": {
+    "id": "539",
+    "roomNumber": "539",
+    "oldNumber": "538",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "538"
+    ],
+    "x": 74.86,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "540": {
+    "id": "540",
+    "roomNumber": "540",
+    "oldNumber": "528",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "528"
+    ],
+    "x": 76.57,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "541": {
+    "id": "541",
+    "roomNumber": "541",
+    "oldNumber": "537",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "537"
+    ],
+    "x": 78.29,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "542": {
+    "id": "542",
+    "roomNumber": "542",
+    "oldNumber": "536",
+    "floor": "5",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "536"
+    ],
+    "x": 80,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "543": {
+    "id": "543",
+    "roomNumber": "543",
+    "oldNumber": "529",
+    "floor": "5",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "529"
+    ],
+    "x": 81.71,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "544": {
+    "id": "544",
+    "roomNumber": "544",
+    "oldNumber": "535",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "535"
+    ],
+    "x": 83.43,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "545": {
+    "id": "545",
+    "roomNumber": "545",
+    "oldNumber": "534",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "534"
+    ],
+    "x": 85.14,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "546": {
+    "id": "546",
+    "roomNumber": "546",
+    "oldNumber": "530",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "530"
+    ],
+    "x": 86.86,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "547": {
+    "id": "547",
+    "roomNumber": "547",
+    "oldNumber": "531",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "531"
+    ],
+    "x": 88.57,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "548": {
+    "id": "548",
+    "roomNumber": "548",
+    "oldNumber": "533",
+    "floor": "5",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "533"
+    ],
+    "x": 90.29,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "549": {
+    "id": "549",
+    "roomNumber": "549",
+    "oldNumber": "532",
+    "floor": "5",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "532"
+    ],
+    "x": 92,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "600": {
+    "id": "600",
+    "roomNumber": "600",
+    "oldNumber": "613",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "613"
+    ],
+    "x": 8,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "601": {
+    "id": "601",
+    "roomNumber": "601",
+    "oldNumber": "601",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [],
+    "x": 10.15,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "602": {
+    "id": "602",
+    "roomNumber": "602",
+    "oldNumber": "612",
+    "floor": "6",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "612"
+    ],
+    "x": 12.31,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "603": {
+    "id": "603",
+    "roomNumber": "603",
+    "oldNumber": "602",
+    "floor": "6",
+    "category": "Junior Suite",
+    "accessible": false,
+    "altIds": [
+      "602"
+    ],
+    "x": 14.46,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "604": {
+    "id": "604",
+    "roomNumber": "604",
+    "oldNumber": "603",
+    "floor": "6",
+    "category": "One Bedroom Suite",
+    "accessible": false,
+    "altIds": [
+      "603"
+    ],
+    "x": 16.62,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "612": {
+    "id": "612",
+    "roomNumber": "612",
+    "oldNumber": "614",
+    "floor": "6",
+    "category": "Extra Large Room",
+    "accessible": false,
+    "altIds": [
+      "614"
+    ],
+    "x": 18.77,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "613": {
+    "id": "613",
+    "roomNumber": "613",
+    "oldNumber": "615",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "615"
+    ],
+    "x": 20.92,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "614": {
+    "id": "614",
+    "roomNumber": "614",
+    "oldNumber": "651",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "651"
+    ],
+    "x": 23.08,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "615": {
+    "id": "615",
+    "roomNumber": "615",
+    "oldNumber": "616",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "616"
+    ],
+    "x": 25.23,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "616": {
+    "id": "616",
+    "roomNumber": "616",
+    "oldNumber": "650",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "650"
+    ],
+    "x": 27.38,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "617": {
+    "id": "617",
+    "roomNumber": "617",
+    "oldNumber": "649",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "649"
+    ],
+    "x": 29.54,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "618": {
+    "id": "618",
+    "roomNumber": "618",
+    "oldNumber": "617",
+    "floor": "6",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "617"
+    ],
+    "x": 31.69,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "619": {
+    "id": "619",
+    "roomNumber": "619",
+    "oldNumber": "618",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "618"
+    ],
+    "x": 33.85,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "620": {
+    "id": "620",
+    "roomNumber": "620",
+    "oldNumber": "623",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "623"
+    ],
+    "x": 36,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "621": {
+    "id": "621",
+    "roomNumber": "621",
+    "oldNumber": "619",
+    "floor": "6",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "619"
+    ],
+    "x": 38.15,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "622": {
+    "id": "622",
+    "roomNumber": "622",
+    "oldNumber": "620",
+    "floor": "6",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "620"
+    ],
+    "x": 40.31,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "623": {
+    "id": "623",
+    "roomNumber": "623",
+    "oldNumber": "622",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "622"
+    ],
+    "x": 42.46,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "624": {
+    "id": "624",
+    "roomNumber": "624",
+    "oldNumber": "621",
+    "floor": "6",
+    "category": "Large Superior Room",
+    "accessible": false,
+    "altIds": [
+      "621"
+    ],
+    "x": 44.62,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "625": {
+    "id": "625",
+    "roomNumber": "625",
+    "oldNumber": "624",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "624"
+    ],
+    "x": 46.77,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "626": {
+    "id": "626",
+    "roomNumber": "626",
+    "oldNumber": "648",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "648"
+    ],
+    "x": 48.92,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "627": {
+    "id": "627",
+    "roomNumber": "627",
+    "oldNumber": "625",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "625"
+    ],
+    "x": 51.08,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "628": {
+    "id": "628",
+    "roomNumber": "628",
+    "oldNumber": "647",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "647"
+    ],
+    "x": 53.23,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "629": {
+    "id": "629",
+    "roomNumber": "629",
+    "oldNumber": "626",
+    "floor": "6",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "626"
+    ],
+    "x": 55.38,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "630": {
+    "id": "630",
+    "roomNumber": "630",
+    "oldNumber": "642",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "642"
+    ],
+    "x": 57.54,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "631": {
+    "id": "631",
+    "roomNumber": "631",
+    "oldNumber": "646",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "646"
+    ],
+    "x": 59.69,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "632": {
+    "id": "632",
+    "roomNumber": "632",
+    "oldNumber": "643",
+    "floor": "6",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "643"
+    ],
+    "x": 61.85,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "633": {
+    "id": "633",
+    "roomNumber": "633",
+    "oldNumber": "644",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "644"
+    ],
+    "x": 64,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "634": {
+    "id": "634",
+    "roomNumber": "634",
+    "oldNumber": "645",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "645"
+    ],
+    "x": 66.15,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "635": {
+    "id": "635",
+    "roomNumber": "635",
+    "oldNumber": "640",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "640"
+    ],
+    "x": 68.31,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "636": {
+    "id": "636",
+    "roomNumber": "636",
+    "oldNumber": "638",
+    "floor": "6",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "638"
+    ],
+    "x": 70.46,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "637": {
+    "id": "637",
+    "roomNumber": "637",
+    "oldNumber": "627",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "627"
+    ],
+    "x": 72.62,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "638": {
+    "id": "638",
+    "roomNumber": "638",
+    "oldNumber": "637",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "637"
+    ],
+    "x": 74.77,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "639": {
+    "id": "639",
+    "roomNumber": "639",
+    "oldNumber": "628",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "628"
+    ],
+    "x": 76.92,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "640": {
+    "id": "640",
+    "roomNumber": "640",
+    "oldNumber": "636",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "636"
+    ],
+    "x": 79.08,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "641": {
+    "id": "641",
+    "roomNumber": "641",
+    "oldNumber": "629",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "629"
+    ],
+    "x": 81.23,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "642": {
+    "id": "642",
+    "roomNumber": "642",
+    "oldNumber": "634",
+    "floor": "6",
+    "category": "Medium Superior Room",
+    "accessible": false,
+    "altIds": [
+      "634"
+    ],
+    "x": 83.38,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "643": {
+    "id": "643",
+    "roomNumber": "643",
+    "oldNumber": "630",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "630"
+    ],
+    "x": 85.54,
+    "y": 48,
+    "coordSource": "auto"
+  },
+  "644": {
+    "id": "644",
+    "roomNumber": "644",
+    "oldNumber": "633",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "633"
+    ],
+    "x": 87.69,
+    "y": 50,
+    "coordSource": "auto"
+  },
+  "645": {
+    "id": "645",
+    "roomNumber": "645",
+    "oldNumber": "631",
+    "floor": "6",
+    "category": "Medium Room",
+    "accessible": false,
+    "altIds": [
+      "631"
+    ],
+    "x": 89.85,
+    "y": 52,
+    "coordSource": "auto"
+  },
+  "646": {
+    "id": "646",
+    "roomNumber": "646",
+    "oldNumber": "632",
+    "floor": "6",
+    "category": "Large Room",
+    "accessible": false,
+    "altIds": [
+      "632"
+    ],
+    "x": 92,
+    "y": 54,
+    "coordSource": "auto"
+  },
+  "700": {
+    "id": "700",
+    "roomNumber": "700",
+    "oldNumber": "A",
+    "floor": "MZ",
+    "category": "Junior Suite",
+    "accessible": false,
+    "altIds": [
+      "A"
+    ],
+    "x": 8,
+    "y": 46,
+    "coordSource": "auto"
+  },
+  "800": {
+    "id": "800",
+    "roomNumber": "800",
+    "oldNumber": "B",
+    "floor": "MZ",
+    "category": "One Bedroom Suite",
+    "accessible": false,
+    "altIds": [
+      "B"
+    ],
+    "x": 92,
+    "y": 48,
+    "coordSource": "auto"
+  }
+}
