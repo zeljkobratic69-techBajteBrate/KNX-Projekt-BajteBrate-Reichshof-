@@ -1,0 +1,165 @@
+{
+  "navigation_segments": {
+    "reception_to_lift": {
+      "de": "Von der Rezeption aus: Bitte nehmen Sie den Fahrstuhl an. Legen Sie Ihre Zimmerkarte nah an den Kartenleser im Fahrstuhl. Drücken Sie Ihre Obergeschoss-Etage an, wo Ihr Zimmer liegt.",
+      "en": "From the reception: Please take the elevator. Hold your room card close to the card reader in the elevator. Press the floor button where your room is located.",
+      "es": "Desde la recepción: Por favor, tome el ascensor. Acerque su tarjeta de habitación al lector de tarjetas en el ascensor. Presione el botón del piso donde se encuentra su habitación."
+    },
+    "floor_exits": {
+      "1": {
+        "de": "Sie befinden sich im 1. Obergeschoss. Nach dem Verlassen des Fahrstuhls gehen Sie geradeaus durch den Vorbereich zwischen Hans Albers und Heidi Kabel.",
+        "en": "You are on the 1st floor. After exiting the elevator, go straight through the anteroom between Hans Albers and Heidi Kabel.",
+        "es": "Está en el primer piso. Después de salir del ascensor, siga recto por el vestíbulo entre Hans Albers y Heidi Kabel."
+      },
+      "2": {
+        "de": "Sie befinden sich im 2. Obergeschoss. Nach dem Verlassen des Fahrstuhls:",
+        "en": "You are on the 2nd floor. After exiting the elevator:",
+        "es": "Está en el segundo piso. Después de salir del ascensor:"
+      },
+      "3": {
+        "de": "Sie befinden sich im 3. Obergeschoss. Nach dem Verlassen des Fahrstuhls:",
+        "en": "You are on the 3rd floor. After exiting the elevator:",
+        "es": "Está en el tercer piso. Después de salir del ascensor:"
+      },
+      "4": {
+        "de": "Sie befinden sich im 4. Obergeschoss. Nach dem Verlassen des Fahrstuhls:",
+        "en": "You are on the 4th floor. After exiting the elevator:",
+        "es": "Está en el cuarto piso. Después de salir del ascensor:"
+      },
+      "5": {
+        "de": "Sie befinden sich im 5. Obergeschoss. Nach dem Verlassen des Fahrstuhls:",
+        "en": "You are on the 5th floor. After exiting the elevator:",
+        "es": "Está en el quinto piso. Después de salir del ascensor:"
+      },
+      "6": {
+        "de": "Sie befinden sich im 6. Obergeschoss (Dachgeschoss). Nach dem Verlassen des Fahrstuhls:",
+        "en": "You are on the 6th floor (attic level). After exiting the elevator:",
+        "es": "Está en el sexto piso (ático). Después de salir del ascensor:"
+      }
+    }
+  },
+  
+  "detailed_room_routes": {
+    "227": {
+      "de": "Zimmer 227: Nach 3 Schritten rechts abbiegen. Folgen Sie dem Flur geradeaus bis zum Ende, dann links. Nach 3 Metern, vorbei bei Zimmern 217 und 218, biegen Sie rechts ab. Gleich nach Zimmer 225 auf Ihrer linken Seite und Zimmer 226 auf Ihrer rechten Seite befindet sich Ihr Zimmer 227 links.",
+      "en": "Room 227: After 3 steps, turn right. Follow the corridor straight to the end, then left. After 3 meters, past rooms 217 and 218, turn right. Just after room 225 on your left and room 226 on your right, your room 227 is on the left.",
+      "es": "Habitación 227: Después de 3 pasos, gire a la derecha. Siga el pasillo recto hasta el final, luego a la izquierda. Después de 3 metros, pasando las habitaciones 217 y 218, gire a la derecha. Justo después de la habitación 225 a su izquierda y la habitación 226 a su derecha, su habitación 227 está a la izquierda."
+    }
+  },
+  
+  "distance_markers": {
+    "3_steps": {
+      "de": "etwa 3 Schritte",
+      "en": "about 3 steps",
+      "es": "unos 3 pasos"
+    },
+    "3_meters": {
+      "de": "3 Meter",
+      "en": "3 meters",
+      "es": "3 metros"
+    },
+    "5_meters": {
+      "de": "5 Meter",
+      "en": "5 meters",
+      "es": "5 metros"
+    },
+    "10_meters": {
+      "de": "10 Meter",
+      "en": "10 meters",
+      "es": "10 metros"
+    }
+  },
+  
+  "direction_terms": {
+    "left": {
+      "de": "links",
+      "en": "left",
+      "es": "izquierda"
+    },
+    "right": {
+      "de": "rechts",
+      "en": "right",
+      "es": "derecha"
+    },
+    "straight": {
+      "de": "geradeaus",
+      "en": "straight",
+      "es": "recto"
+    },
+    "turn_left": {
+      "de": "links abbiegen",
+      "en": "turn left",
+      "es": "gire a la izquierda"
+    },
+    "turn_right": {
+      "de": "rechts abbiegen",
+      "en": "turn right",
+      "es": "gire a la derecha"
+    },
+    "at_the_end": {
+      "de": "am Ende",
+      "en": "at the end",
+      "es": "al final"
+    },
+    "past_room": {
+      "de": "vorbei bei Zimmer",
+      "en": "past room",
+      "es": "pasando la habitación"
+    },
+    "on_your_left": {
+      "de": "auf Ihrer linken Seite",
+      "en": "on your left",
+      "es": "a su izquierda"
+    },
+    "on_your_right": {
+      "de": "auf Ihrer rechten Seite",
+      "en": "on your right",
+      "es": "a su derecha"
+    }
+  },
+  
+  "reference_points": {
+    "1og": {
+      "hans_albers": {
+        "de": "Veranstaltungsraum Hans Albers",
+        "en": "Event room Hans Albers",
+        "es": "Sala de eventos Hans Albers"
+      },
+      "heidi_kabel": {
+        "de": "Veranstaltungsraum Heidi Kabel",
+        "en": "Event room Heidi Kabel",
+        "es": "Sala de eventos Heidi Kabel"
+      },
+      "restrooms": {
+        "de": "Damen/Herren-WC",
+        "en": "Ladies/Gents restrooms",
+        "es": "Baños Damas/Caballeros"
+      }
+    },
+    "common": {
+      "fire_doors": {
+        "de": "Brandschutztüren (Zimmerkarte erforderlich)",
+        "en": "Fire doors (room card required)",
+        "es": "Puertas cortafuego (tarjeta requerida)"
+      },
+      "elevator": {
+        "de": "Fahrstuhl",
+        "en": "Elevator",
+        "es": "Ascensor"
+      }
+    }
+  },
+  
+  "accessibility_notes": {
+    "wheelchair_route": {
+      "de": "Rollstuhlgerechte Route: {route}",
+      "en": "Wheelchair-accessible route: {route}",
+      "es": "Ruta accesible en silla de ruedas: {route}"
+    },
+    "elevator_required": {
+      "de": "Aufzug erforderlich",
+      "en": "Elevator required",
+      "es": "Ascensor requerido"
+    }
+  }
+}

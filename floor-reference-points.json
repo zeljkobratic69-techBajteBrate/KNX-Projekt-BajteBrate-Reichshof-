@@ -1,0 +1,402 @@
+{
+  "description": "Referentne točke na svakom spratu - LIFT, TH (Treppenhaus), itd.",
+  "reference_points": {
+    "EG": {
+      "LIFT_MAIN": {
+        "type": "elevator",
+        "name": {
+          "de": "Hauptaufzug",
+          "en": "Main Elevator",
+          "es": "Ascensor Principal"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "description": {
+          "de": "Hauptaufzug - Zugang zu allen Etagen 1-6 OG",
+          "en": "Main Elevator - Access to all floors 1-6",
+          "es": "Ascensor principal - Acceso a todos los pisos 1-6"
+        },
+        "icon": "🛗"
+      },
+      "LIFT_SPA": {
+        "type": "elevator",
+        "name": {
+          "de": "SPA-Aufzug",
+          "en": "SPA Elevator",
+          "es": "Ascensor SPA"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "description": {
+          "de": "SPA-Aufzug - Zugang zum Spa-Bereich im Untergeschoss",
+          "en": "SPA Elevator - Access to spa area in basement",
+          "es": "Ascensor SPA - Acceso al área del spa en el sótano"
+        },
+        "icon": "🛗💆"
+      },
+      "TH_MAIN_NORTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Nord (Notausgang)",
+          "en": "Stairwell North (Emergency Exit)",
+          "es": "Escalera Norte (Salida de Emergencia)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "description": {
+          "de": "Notausgang Nord - Fluchtweg bei Brand (Aufzug nicht benutzen!)",
+          "en": "Emergency Exit North - Escape route in case of fire (Do not use elevator!)",
+          "es": "Salida de Emergencia Norte - Ruta de escape en caso de incendio (¡No usar ascensor!)"
+        },
+        "icon": "🚪🔥"
+      },
+      "TH_MAIN_SOUTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Süd (Notausgang)",
+          "en": "Stairwell South (Emergency Exit)",
+          "es": "Escalera Sur (Salida de Emergencia)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "description": {
+          "de": "Notausgang Süd - Fluchtweg bei Brand (Aufzug nicht benutzen!)",
+          "en": "Emergency Exit South - Escape route in case of fire (Do not use elevator!)",
+          "es": "Salida de Emergencia Sur - Ruta de escape en caso de incendio (¡No usar ascensor!)"
+        },
+        "icon": "🚪🔥"
+      }
+    },
+    "1OG": {
+      "LIFT_MAIN": {
+        "type": "elevator",
+        "name": {
+          "de": "Hauptaufzug (1. OG)",
+          "en": "Main Elevator (1st Floor)",
+          "es": "Ascensor Principal (Piso 1)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "description": {
+          "de": "Hauptaufzug 1. Obergeschoss - Startpunkt für Zimmer 100-135",
+          "en": "Main Elevator 1st floor - Starting point for rooms 100-135",
+          "es": "Ascensor principal piso 1 - Punto de inicio para habitaciones 100-135"
+        },
+        "icon": "🛗"
+      },
+      "TH_NORTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Nord (1. OG)",
+          "en": "Stairwell North (1st Floor)",
+          "es": "Escalera Norte (Piso 1)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      },
+      "TH_SOUTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Süd (1. OG)",
+          "en": "Stairwell South (1st Floor)",
+          "es": "Escalera Sur (Piso 1)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      },
+      "HANS_ALBERS": {
+        "type": "landmark",
+        "name": {
+          "de": "Veranstaltungsraum Hans Albers",
+          "en": "Event Room Hans Albers",
+          "es": "Sala de Eventos Hans Albers"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "icon": "🎭"
+      },
+      "HEIDI_KABEL": {
+        "type": "landmark",
+        "name": {
+          "de": "Veranstaltungsraum Heidi Kabel",
+          "en": "Event Room Heidi Kabel",
+          "es": "Sala de Eventos Heidi Kabel"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "icon": "🎭"
+      },
+      "RESTROOMS": {
+        "type": "landmark",
+        "name": {
+          "de": "WC Damen/Herren",
+          "en": "Restrooms Ladies/Gents",
+          "es": "Baños Damas/Caballeros"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "icon": "🚻"
+      }
+    },
+    "2OG": {
+      "LIFT_MAIN": {
+        "type": "elevator",
+        "name": {
+          "de": "Hauptaufzug (2. OG)",
+          "en": "Main Elevator (2nd Floor)",
+          "es": "Ascensor Principal (Piso 2)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "description": {
+          "de": "Hauptaufzug 2. Obergeschoss - Startpunkt für Zimmer 200-249",
+          "en": "Main Elevator 2nd floor - Starting point for rooms 200-249",
+          "es": "Ascensor principal piso 2 - Punto de inicio para habitaciones 200-249"
+        },
+        "icon": "🛗"
+      },
+      "TH_NORTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Nord (2. OG)",
+          "en": "Stairwell North (2nd Floor)",
+          "es": "Escalera Norte (Piso 2)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      },
+      "TH_SOUTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Süd (2. OG)",
+          "en": "Stairwell South (2nd Floor)",
+          "es": "Escalera Sur (Piso 2)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      }
+    },
+    "3OG": {
+      "LIFT_MAIN": {
+        "type": "elevator",
+        "name": {
+          "de": "Hauptaufzug (3. OG)",
+          "en": "Main Elevator (3rd Floor)",
+          "es": "Ascensor Principal (Piso 3)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "description": {
+          "de": "Hauptaufzug 3. Obergeschoss - Startpunkt für Zimmer 300-349",
+          "en": "Main Elevator 3rd floor - Starting point for rooms 300-349",
+          "es": "Ascensor principal piso 3 - Punto de inicio para habitaciones 300-349"
+        },
+        "icon": "🛗"
+      },
+      "TH_NORTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Nord (3. OG)",
+          "en": "Stairwell North (3rd Floor)",
+          "es": "Escalera Norte (Piso 3)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      },
+      "TH_SOUTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Süd (3. OG)",
+          "en": "Stairwell South (3rd Floor)",
+          "es": "Escalera Sur (Piso 3)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      }
+    },
+    "4OG": {
+      "LIFT_MAIN": {
+        "type": "elevator",
+        "name": {
+          "de": "Hauptaufzug (4. OG)",
+          "en": "Main Elevator (4th Floor)",
+          "es": "Ascensor Principal (Piso 4)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "description": {
+          "de": "Hauptaufzug 4. Obergeschoss - Startpunkt für Zimmer 400-449",
+          "en": "Main Elevator 4th floor - Starting point for rooms 400-449",
+          "es": "Ascensor principal piso 4 - Punto de inicio para habitaciones 400-449"
+        },
+        "icon": "🛗"
+      },
+      "TH_NORTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Nord (4. OG)",
+          "en": "Stairwell North (4th Floor)",
+          "es": "Escalera Norte (Piso 4)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      },
+      "TH_SOUTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Süd (4. OG)",
+          "en": "Stairwell South (4th Floor)",
+          "es": "Escalera Sur (Piso 4)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      }
+    },
+    "5OG": {
+      "LIFT_MAIN": {
+        "type": "elevator",
+        "name": {
+          "de": "Hauptaufzug (5. OG)",
+          "en": "Main Elevator (5th Floor)",
+          "es": "Ascensor Principal (Piso 5)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "description": {
+          "de": "Hauptaufzug 5. Obergeschoss - Startpunkt für Zimmer 500-549",
+          "en": "Main Elevator 5th floor - Starting point for rooms 500-549",
+          "es": "Ascensor principal piso 5 - Punto de inicio para habitaciones 500-549"
+        },
+        "icon": "🛗"
+      },
+      "TH_NORTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Nord (5. OG)",
+          "en": "Stairwell North (5th Floor)",
+          "es": "Escalera Norte (Piso 5)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      },
+      "TH_SOUTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Süd (5. OG)",
+          "en": "Stairwell South (5th Floor)",
+          "es": "Escalera Sur (Piso 5)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      }
+    },
+    "6OG": {
+      "LIFT_MAIN": {
+        "type": "elevator",
+        "name": {
+          "de": "Hauptaufzug (6. OG / Dachgeschoss)",
+          "en": "Main Elevator (6th Floor / Attic)",
+          "es": "Ascensor Principal (Piso 6 / Ático)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "description": {
+          "de": "Hauptaufzug 6. Obergeschoss (Dachgeschoss) - Startpunkt für Zimmer 600-646",
+          "en": "Main Elevator 6th floor (Attic level) - Starting point for rooms 600-646",
+          "es": "Ascensor principal piso 6 (Ático) - Punto de inicio para habitaciones 600-646"
+        },
+        "icon": "🛗"
+      },
+      "TH_NORTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Nord (6. OG)",
+          "en": "Stairwell North (6th Floor)",
+          "es": "Escalera Norte (Piso 6)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      },
+      "TH_SOUTH": {
+        "type": "emergency_exit",
+        "name": {
+          "de": "Treppenhaus Süd (6. OG)",
+          "en": "Stairwell South (6th Floor)",
+          "es": "Escalera Sur (Piso 6)"
+        },
+        "x": null,
+        "y": null,
+        "coordSource": "manual",
+        "emergency_exit": true,
+        "icon": "🚪🔥"
+      }
+    }
+  },
+  
+  "emergency_navigation_rules": {
+    "description": "U slučaju požara - LIFT NE RADI! Koristiti TH (Treppenhaus)",
+    "de": {
+      "alert": "⚠️ FEUERALARM: AUFZUG NICHT BENUTZEN! ⚠️",
+      "instruction": "Benutzen Sie das nächstgelegene Treppenhaus (TH). Der Aufzug fährt automatisch ins Erdgeschoss und bleibt dort stehen.",
+      "direction_to_nearest_th": "Folgen Sie den grünen Notausgang-Schildern zum nächsten Treppenhaus."
+    },
+    "en": {
+      "alert": "⚠️ FIRE ALARM: DO NOT USE ELEVATOR! ⚠️",
+      "instruction": "Use the nearest stairwell (TH). The elevator automatically returns to ground floor and stops there.",
+      "direction_to_nearest_th": "Follow the green emergency exit signs to the nearest stairwell."
+    },
+    "es": {
+      "alert": "⚠️ ALARMA DE INCENDIO: ¡NO USAR ASCENSOR! ⚠️",
+      "instruction": "Use la escalera más cercana (TH). El ascensor regresa automáticamente a la planta baja y se detiene allí.",
+      "direction_to_nearest_th": "Siga los carteles verdes de salida de emergencia hacia la escalera más cercana."
+    }
+  }
+}

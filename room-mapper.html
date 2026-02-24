@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🗺️ Reichshof Room Mapper - Professional Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 2px solid rgba(251, 191, 36, 0.3);
+        }
+        
+        .header h1 {
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+        
+        .header p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        
+        .mapper-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .controls-panel {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid rgba(251, 191, 36, 0.2);
+            height: fit-content;
+        }
+        
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .control-group label {
+            display: block;
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .control-group input,
+        .control-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .control-group input:focus,
+        .control-group select:focus {
+            outline: none;
+            border-color: #fbbf24;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 0.875rem;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 0.75rem;
+        }
+        
+        .btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn.gold {
+            background: #fbbf24;
+            color: #0f172a;
+        }
+        
+        .btn.gold:hover {
+            background: #f59e0b;
+        }
+        
+        .btn.green {
+            background: #22c55e;
+        }
+        
+        .btn.green:hover {
+            background: #16a34a;
+        }
+        
+        .btn.red {
+            background: #ef4444;
+        }
+        
+        .btn.red:hover {
+            background: #dc2626;
+        }
+        
+        .coordinates-display {
+            background: rgba(34, 197, 94, 0.1);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .coord-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .coord-label {
+            color: #94a3b8;
+        }
+        
+        .coord-value {
+            color: #22c55e;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .map-viewer {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 3px solid #fbbf24;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 800px;
+            margin: 0 auto;
+            background: #0f0f1e;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: crosshair;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .floor-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        .marker {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #ef4444;
+            border: 5px solid white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: grab;
+            box-shadow: 0 0 40px rgba(239, 68, 68, 0.9);
+            z-index: 100;
+            transition: transform 0.2s ease;
+        }
+        
+        .marker:active {
+            cursor: grabbing;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+        
+        .marker::after {
+            content: '+';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .fine-tune {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .fine-tune-btn {
+            padding: 0.5rem;
+            background: rgba(100, 100, 100, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        
+        .fine-tune-btn:hover {
+            background: rgba(100, 100, 100, 0.5);
+        }
+        
+        .saved-rooms {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .saved-room-item {
+            background: rgba(34, 197, 94, 0.1);
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-radius: 6px;
+            border-left: 3px solid #22c55e;
+            font-size: 0.9rem;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #22c55e;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .notification.error {
+            background: #ef4444;
+        }
+        
+        .notification.info {
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗺️ Professional Room Mapper</h1>
+        <p>Reichshof Hamburg | Präzises Koordinaten-Mapping Tool</p>
+    </div>
+    
+    <div class="mapper-container">
+        <!-- LEFT PANEL - Controls -->
+        <div class="controls-panel">
+            <div class="control-group">
+                <label>📍 Zimmernummer</label>
+                <input type="text" id="room-number" placeholder="z.B. 212, 318, 423..." />
+            </div>
+            
+            <div class="control-group">
+                <label>🏢 Etage wählen</label>
+                <select id="floor-select">
+                    <option value="zg">Erdgeschoss (EG)</option>
+                    <option value="1og">1. Obergeschoss</option>
+                    <option value="2og" selected>2. Obergeschoss</option>
+                    <option value="3og">3. Obergeschoss</option>
+                    <option value="4og">4. Obergeschoss</option>
+                    <option value="5og">5. Obergeschoss</option>
+                    <option value="6og">6. Obergeschoss</option>
+                </select>
+            </div>
+            
+            <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 8px; padding: 0.75rem; margin-bottom: 1rem;">
+                <p style="margin: 0; font-size: 0.85rem; color: #86efac;">
+                    ✅ <strong>SVG Format</strong><br>
+                    <small style="color: #94a3b8;">Vektorska grafika - perfekt für Mapping!</small>
+                </p>
+            </div>
+            
+            <button class="btn gold" onclick="loadFloorPlan()">
+                📐 Plan laden
+            </button>
+            
+            <div class="coordinates-display">
+                <h3 style="color: #fbbf24; margin-bottom: 0.75rem; font-size: 1rem;">📊 Koordinaten</h3>
+                <div class="coord-item">
+                    <span class="coord-label">X:</span>
+                    <span class="coord-value" id="coord-x">50.00%</span>
+                </div>
+                <div class="coord-item">
+                    <span class="coord-label">Y:</span>
+                    <span class="coord-value" id="coord-y">50.00%</span>
+                </div>
+            </div>
+            
+            <h4 style="color: #94a3b8; margin-bottom: 0.5rem; font-size: 0.9rem;">Feinabstimmung</h4>
+            <div class="fine-tune">
+                <button class="fine-tune-btn" onclick="nudge(-1, 0)">⬅️ Links (1%)</button>
+                <button class="fine-tune-btn" onclick="nudge(1, 0)">➡️ Rechts (1%)</button>
+                <button class="fine-tune-btn" onclick="nudge(0, -1)">⬆️ Oben (1%)</button>
+                <button class="fine-tune-btn" onclick="nudge(0, 1)">⬇️ Unten (1%)</button>
+                <button class="fine-tune-btn" onclick="nudge(-0.1, 0)">◀️ Fein Links</button>
+                <button class="fine-tune-btn" onclick="nudge(0.1, 0)">▶️ Fein Rechts</button>
+                <button class="fine-tune-btn" onclick="nudge(0, -0.1)">🔼 Fein Oben</button>
+                <button class="fine-tune-btn" onclick="nudge(0, 0.1)">🔽 Fein Unten</button>
+            </div>
+            
+            <button class="btn green" onclick="saveCoordinates()" style="margin-top: 1.5rem;">
+                💾 Speichern
+            </button>
+            
+            <button class="btn" onclick="resetMarker()">
+                🎯 Zentrum
+            </button>
+            
+            <button class="btn red" onclick="downloadJSON()">
+                📥 JSON Download
+            </button>
+            
+            <div class="saved-rooms" id="saved-list">
+                <h4 style="color: #fbbf24; margin-bottom: 0.75rem;">💾 Gespeicherte Zimmer</h4>
+                <p style="color: #64748b; font-size: 0.85rem;">Noch keine Zimmer gespeichert</p>
+            </div>
+        </div>
+        
+        <!-- RIGHT PANEL - Map -->
+        <div class="map-viewer">
+            <h3 style="color: #fbbf24; margin-bottom: 1rem; text-align: center;">
+                🗺️ <span id="current-floor">2. Obergeschoss</span>
+            </h3>
+            <div class="map-container" id="map-container">
+                <img src="svg/2og.svg" 
+                     alt="Floor Plan" 
+                     class="floor-image" 
+                     id="floor-image"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;color:#ef4444;text-align:center;padding:2rem;&quot;><i class=&quot;fas fa-exclamation-circle&quot; style=&quot;font-size:3rem;margin-bottom:1rem;&quot;></i><br>Grundriss nicht gefunden!<br><small>svg/' + this.src.split('/').pop() + '</small></div>'" />
+                <div class="marker" id="marker" style="left: 50%; top: 50%;"></div>
+            </div>
+            <p style="text-align: center; margin-top: 1rem; color: #94a3b8; font-size: 0.9rem;">
+                💡 <strong>Tipp:</strong> Klicke direkt auf die Karte oder ziehe den roten Marker!
+            </p>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification"></div>
+
+    <script>
+        const marker = document.getElementById('marker');
+        const container = document.getElementById('map-container');
+        const coordX = document.getElementById('coord-x');
+        const coordY = document.getElementById('coord-y');
+        
+        let currentX = 50;
+        let currentY = 50;
+        let isDragging = false;
+        let savedRooms = JSON.parse(localStorage.getItem('reichshof_room_coords') || '{}');
+        
+        // DRAG START
+        marker.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            e.stopPropagation();
+        });
+        
+        // DRAG MOVE
+        container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            const rect = container.getBoundingClientRect();
+            currentX = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+            currentY = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+            updatePosition();
+        });
+        
+        // DRAG END
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+        
+        // DIRECT CLICK
+        container.addEventListener('click', (e) => {
+            if (e.target === marker) return;
+            
+            const rect = container.getBoundingClientRect();
+            currentX = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+            currentY = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+            updatePosition();
+            
+            // Visual feedback
+            marker.style.transform = 'translate(-50%, -50%) scale(1.3)';
+            setTimeout(() => {
+                marker.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 200);
+        });
+        
+        // UPDATE POSITION
+        function updatePosition() {
+            marker.style.left = currentX + '%';
+            marker.style.top = currentY + '%';
+            coordX.textContent = currentX.toFixed(2) + '%';
+            coordY.textContent = currentY.toFixed(2) + '%';
+        }
+        
+        // NUDGE (Fine-tuning)
+        function nudge(dx, dy) {
+            currentX = Math.max(0, Math.min(100, currentX + dx));
+            currentY = Math.max(0, Math.min(100, currentY + dy));
+            updatePosition();
+        }
+        
+        // RESET
+        function resetMarker() {
+            currentX = 50;
+            currentY = 50;
+            updatePosition();
+            showNotification('Marker auf Zentrum zurückgesetzt', 'info');
+        }
+        
+        // LOAD FLOOR PLAN
+        function loadFloorPlan() {
+            const floor = document.getElementById('floor-select').value;
+            const floorImage = document.getElementById('floor-image');
+            const floorNames = {
+                'zg': 'Erdgeschoss',
+                '1og': '1. Obergeschoss',
+                '2og': '2. Obergeschoss',
+                '3og': '3. Obergeschoss',
+                '4og': '4. Obergeschoss',
+                '5og': '5. Obergeschoss',
+                '6og': '6. Obergeschoss'
+            };
+            
+            floorImage.src = `svg/${floor}.svg`;
+            document.getElementById('current-floor').textContent = floorNames[floor];
+            showNotification(`${floorNames[floor]} geladen (SVG)`, 'success');
+        }
+        
+        // SAVE COORDINATES
+        function saveCoordinates() {
+            const roomNumber = document.getElementById('room-number').value.trim();
+            
+            if (!roomNumber) {
+                showNotification('Bitte Zimmernummer eingeben!', 'error');
+                return;
+            }
+            
+            const floor = document.getElementById('floor-select').value;
+            
+            savedRooms[roomNumber] = {
+                x: parseFloat(currentX.toFixed(2)),
+                y: parseFloat(currentY.toFixed(2)),
+                floor: floor,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('reichshof_room_coords', JSON.stringify(savedRooms));
+            updateSavedList();
+            showNotification(`✅ Zimmer ${roomNumber} gespeichert!`, 'success');
+            
+            console.log('Gespeichert:', savedRooms[roomNumber]);
+        }
+        
+        // UPDATE SAVED LIST
+        function updateSavedList() {
+            const list = document.getElementById('saved-list');
+            const rooms = Object.entries(savedRooms);
+            
+            if (rooms.length === 0) {
+                list.innerHTML = `
+                    <h4 style="color: #fbbf24; margin-bottom: 0.75rem;">💾 Gespeicherte Zimmer</h4>
+                    <p style="color: #64748b; font-size: 0.85rem;">Noch keine Zimmer gespeichert</p>
+                `;
+                return;
+            }
+            
+            list.innerHTML = `
+                <h4 style="color: #fbbf24; margin-bottom: 0.75rem;">💾 Gespeicherte Zimmer (${rooms.length})</h4>
+                ${rooms.map(([number, data]) => `
+                    <div class="saved-room-item">
+                        <strong>Zimmer ${number}</strong><br>
+                        <small>${data.x}% X, ${data.y}% Y | ${data.floor.toUpperCase()}</small>
+                    </div>
+                `).join('')}
+            `;
+        }
+        
+        // DOWNLOAD JSON
+        function downloadJSON() {
+            const json = JSON.stringify(savedRooms, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `reichshof-room-coords-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showNotification('📥 JSON heruntergeladen!', 'success');
+        }
+        
+        // NOTIFICATION
+        function showNotification(message, type = 'success') {
+            const notif = document.getElementById('notification');
+            notif.textContent = message;
+            notif.className = `notification ${type} show`;
+            
+            setTimeout(() => {
+                notif.classList.remove('show');
+            }, 3000);
+        }
+        
+        // INIT
+        updateSavedList();
+        console.log('✅ Professional Room Mapper loaded!');
+        console.log('Gespeicherte Zimmer:', Object.keys(savedRooms).length);
+    </script>
+</body>
+</html>

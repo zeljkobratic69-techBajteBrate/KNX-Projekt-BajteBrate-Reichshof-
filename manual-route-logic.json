@@ -1,0 +1,43 @@
+{
+  "de": {
+    "f2to5_left": "Vom Lift auf {floor}. OG: links abbiegen. Dieser Flur führt zu den Zimmern xx00–xx11. Folgen Sie dem Flur bis Zimmer {room}.",
+    "f2to5_right": "Vom Lift auf {floor}. OG: rechts abbiegen. Dieser Flur führt zu den Zimmern xx12–xx49. Folgen Sie dem Flur bis Zimmer {room}.",
+
+    "f6_left": "Vom Lift im 6. OG: links abbiegen. Der linke Bereich führt zu den Zimmern 600–604. Folgen Sie dem Flur bis Zimmer {room}.",
+    "f6_right": "Vom Lift im 6. OG: rechts abbiegen. Der rechte Bereich führt zu den Zimmern 612–646. Folgen Sie dem Flur bis Zimmer {room}.",
+
+    "f1_room100": "Vom Lift im 1. OG: geradeaus durch den Vorbereich zwischen Hans Albers und Heidi Kabel. Geradeaus weiter bis Zimmer 100.",
+    "f1_left_101_102": "Vom Lift im 1. OG: geradeaus durch den Vorbereich zwischen Hans Albers und Heidi Kabel, durch den Mezzanine-Bereich. Nach Heidi Kabel rechts, an Damen/Herren-WC vorbei. Zimmer {room} befindet sich am Ende des Flurs.",
+    "f1_right_103_135": "Vom Lift im 1. OG: rechts durch TH9 mit Bodenfliesen, durch zwei doppelte Brandschutztüren (Zimmerkarte erforderlich). Danach im weiteren Flurabschnitt zu den Zimmern 103–135 bis Zimmer {room}.",
+
+    "f7f8_special": "Für Appartement {room}: folgen Sie zuerst dem Weg wie zu den Zimmern 103–135. Neben Zimmer 130 durch die Tür ins kleine Treppenhaus, zwei Reihen Stufen, dann rechts mit Zimmerkarte in den Bereich der Appartements 700/800."
+  },
+
+  "en": {
+    "f2to5_left": "From the elevator on floor {floor}: turn left. This corridor leads to rooms xx00–xx11. Follow the corridor to room {room}.",
+    "f2to5_right": "From the elevator on floor {floor}: turn right. This corridor leads to rooms xx12–xx49. Follow the corridor to room {room}.",
+
+    "f6_left": "From the elevator on floor 6: turn left. The left section leads to rooms 600–604. Follow the corridor to room {room}.",
+    "f6_right": "From the elevator on floor 6: turn right. The right section leads to rooms 612–646. Follow the corridor to room {room}.",
+
+    "f1_room100": "From the elevator on floor 1: continue straight through the anteroom between Hans Albers and Heidi Kabel. Continue straight to room 100.",
+    "f1_left_101_102": "From the elevator on floor 1: continue straight through the anteroom between Hans Albers and Heidi Kabel, through the mezzanine area. After Heidi Kabel, turn right and pass the restrooms. Room {room} is at the end of the corridor.",
+    "f1_right_103_135": "From the elevator on floor 1: turn right through TH9 with floor tiles, through two double fire doors (room card required). Continue in the next corridor section to rooms 103–135 until room {room}.",
+
+    "f7f8_special": "For apartment {room}: first follow the route toward rooms 103–135. Next to room 130, pass through the door into the small staircase, two rows of steps, then right and use your room card to enter the 700/800 apartment area."
+  },
+
+  "es": {
+    "f2to5_left": "Desde el ascensor en la planta {floor}: gire a la izquierda. Este pasillo lleva a las habitaciones xx00–xx11. Siga hasta la habitación {room}.",
+    "f2to5_right": "Desde el ascensor en la planta {floor}: gire a la derecha. Este pasillo lleva a las habitaciones xx12–xx49. Siga hasta la habitación {room}.",
+
+    "f6_left": "Desde el ascensor en la planta 6: gire a la izquierda. La zona izquierda lleva a las habitaciones 600–604. Siga hasta la habitación {room}.",
+    "f6_right": "Desde el ascensor en la planta 6: gire a la derecha. La zona derecha lleva a las habitaciones 612–646. Siga hasta la habitación {room}.",
+
+    "f1_room100": "Desde el ascensor en la planta 1: siga recto por el vestíbulo entre Hans Albers y Heidi Kabel. Continúe recto hasta la habitación 100.",
+    "f1_left_101_102": "Desde el ascensor en la planta 1: siga recto por el vestíbulo entre Hans Albers y Heidi Kabel, pasando por la zona mezzanine. Después de Heidi Kabel, gire a la derecha y pase los baños. La habitación {room} está al final del pasillo.",
+    "f1_right_103_135": "Desde el ascensor en la planta 1: gire a la derecha por TH9, atravesando dos puertas dobles cortafuego (se requiere tarjeta). Continúe por el siguiente tramo de pasillo hacia las habitaciones 103–135 hasta la habitación {room}.",
+
+    "f7f8_special": "Para el apartamento {room}: primero siga la ruta hacia las habitaciones 103–135. Junto a la habitación 130, pase por la puerta al pequeño tramo de escaleras (dos filas de escalones), luego a la derecha y use su tarjeta para entrar en la zona de los apartamentos 700/800."
+  }
+}

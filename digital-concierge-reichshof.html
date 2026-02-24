@@ -1,0 +1,1009 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Digital Concierge Reichshof Hamburg - accessible room search and navigation">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Reichshof Concierge">
+    <meta name="description" content="Digital Concierge Reichshof – accessible and intuitive. No guest should get lost.">
+    
+    <link rel="manifest" href="manifest.json">
+    
+    <title>Digital Concierge & Accessibility – Reichshof Hamburg</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <link rel="stylesheet" href="css/style.css?v=3.0.4">
+</head>
+<body>
+    <div id="blue-filter" style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,100,255,0.1); pointer-events:none; z-index:9998; display:none;"></div>
+    <div id="offline-indicator" class="offline-indicator"><i class="fas fa-wifi-slash"></i> <span data-i18n="offline_mode">Offline mode - data loaded from cache</span></div>
+    <div id="local-mode-indicator" class="offline-indicator" style="display:none;"><i class="fas fa-file-alt"></i> <span data-i18n="local_mode_notice">Local file mode detected – online features are limited.</span></div>
+    
+    <a href="#main-content" class="skip-link" data-i18n="skip_to_content">Skip to main content</a>
+    
+    <div class="app-container">
+        <header class="header" role="banner">
+            <div class="header-top">
+                <div class="logo" onclick="showSection('home')">
+                    <i class="fas fa-hotel logo-icon"></i>
+                    <div>
+                        <div class="logo-text" data-i18n="brand_name">Reichshof Hamburg</div>
+                        <div class="logo-subtext" data-i18n="brand_sub">Digital Concierge Version drei Punkt null Punkt null</div>
+                    </div>
+                </div>
+                <div class="controls" role="toolbar" aria-label="Sprache und Einstellungen">
+                    <span id="backend-status-badge" class="backend-status-badge backend-static" role="status" aria-live="polite">Backend: Static</span>
+                    <button class="btn active" data-lang="de" onclick="setLanguage('de')" aria-pressed="true">
+                        <span class="sr-only">Deutsch</span> DE
+                    </button>
+                    <button class="btn" data-lang="en" onclick="setLanguage('en')" aria-pressed="false">
+                        <span class="sr-only">English</span> EN
+                    </button>
+                    <button class="btn" data-lang="es" onclick="setLanguage('es')" aria-pressed="false">
+                        <span class="sr-only">Español</span> ES
+                    </button>
+                    <button class="btn" onclick="toggleHighContrast()" aria-label="Toggle high contrast">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="btn" onclick="increaseFontSize()" aria-label="Increase font size">
+                        A plus
+                    </button>
+                    <button class="btn" id="voice-settings-btn" onclick="openVoiceSettings()" aria-label="Voice settings">
+                        <i class="fas fa-cog"></i> <span data-i18n="voice_settings">Voice settings</span>
+                    </button>
+                    <button class="btn" onclick="window.print()" aria-label="Print page">
+                        <i class="fas fa-print"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <label for="roomInput" class="sr-only" data-i18n="search_placeholder">Zimmernummer eingeben...</label>
+                <input type="text" 
+                       id="roomInput" 
+                       class="search-input" 
+                       data-i18n-placeholder="search_placeholder"
+                       placeholder="Zimmernummer eingeben..." 
+                       aria-label="Zimmernummer"
+                       onkeypress="if(event.key === 'Enter') searchRoomGlobal()">
+                <button class="search-btn" onclick="searchRoomGlobal()" aria-label="Zimmer finden">
+                    <i class="fas fa-search"></i> <span data-i18n="find_room">ZIMMER FINDEN</span>
+                </button>
+            </div>
+            
+            <div class="a11y-toolbar">
+                <button class="btn a11y-btn" onclick="speakCurrentSection()" data-i18n-aria="a11y_read" aria-label="Aktuelle Seite vorlesen">
+                    <i class="fas fa-volume-up"></i> <span data-i18n="a11y_read">Vorlesen</span>
+                </button>
+                <button class="btn a11y-btn" onclick="toggleBlueFilter()" data-i18n-aria="a11y_bluefilter" aria-label="Blaufilter ein- oder ausschalten">
+                    <i class="fas fa-tint"></i> <span data-i18n="a11y_bluefilter">Blaufilter</span>
+                </button>
+                <button id="restore-visual-btn" class="btn a11y-btn" onclick="toggleVisualRestore()" aria-pressed="false" data-i18n-aria="visual_restore_title" aria-label="Visuelle Einstellungen beim Start wiederherstellen">
+                    <i class="fas fa-power-off"></i> <span id="restore-visual-label">Auto-Restore Off</span>
+                </button>
+                <button class="btn a11y-btn" onclick="resetAccessibility()" data-i18n-aria="a11y_reset" aria-label="Barrierefreiheitseinstellungen zurücksetzen">
+                    <i class="fas fa-undo"></i> <span data-i18n="a11y_reset">Reset</span>
+                </button>
+            </div>
+        </header>
+        
+        <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
+            <ul class="nav-list" id="nav-list" role="menubar">
+                <li role="none"><a href="#" class="nav-link active" onclick="showSection('home')" role="menuitem" aria-current="page"><i class="fas fa-home nav-icon"></i><span class="nav-text" data-i18n="nav_home">Start</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('hotel-info')" role="menuitem"><i class="fas fa-hotel nav-icon"></i><span class="nav-text" data-i18n="nav_hotel_info">Hotelinfo</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('room-search')" role="menuitem"><i class="fas fa-search nav-icon"></i><span class="nav-text" data-i18n="nav_room_search">Zimmersuche</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('floor-plans')" role="menuitem"><i class="fas fa-map nav-icon"></i><span class="nav-text" data-i18n="nav_floor_plans">Grundrisse</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('accessibility')" role="menuitem"><i class="fas fa-wheelchair nav-icon"></i><span class="nav-text" data-i18n="nav_accessibility">Barrierefrei</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('housekeeping')" role="menuitem"><i class="fas fa-concierge-bell nav-icon"></i><span id="nav-housekeeping-label" class="nav-text">Hausservice</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('breakfast-guide')" role="menuitem"><i class="fas fa-egg nav-icon"></i><span id="nav-breakfast-label" class="nav-text">Frühstück</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('history-poi')" role="menuitem"><i class="fas fa-landmark nav-icon"></i><span id="nav-history-label" class="nav-text">Historie</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('emergency')" role="menuitem"><i class="fas fa-first-aid nav-icon"></i><span class="nav-text" data-i18n="nav_emergency">Notfall</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('qr-codes')" role="menuitem"><i class="fas fa-qrcode nav-icon"></i><span class="nav-text" data-i18n="nav_qr_codes">QR-Codes</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="openNewspaperSection()" role="menuitem"><i class="fas fa-newspaper nav-icon"></i><span class="nav-text">Newspapers</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('gallery')" role="menuitem"><i class="fas fa-images nav-icon"></i><span class="nav-text" data-i18n="nav_gallery">Galerie</span></a></li>
+                <li role="none"><a href="#" class="nav-link" onclick="showSection('admin-panel')" role="menuitem" style="background: rgba(239, 68, 68, 0.2); border-left: 3px solid #ef4444;"><i class="fas fa-cogs nav-icon"></i><span class="nav-text">🔧 Admin - LIFT/TH</span></a></li>
+            </ul>
+        </nav>
+        
+        <main id="main-content" class="main-content" role="main">
+            <section id="home" class="section active" aria-labelledby="home-title">
+                <div class="hero">
+                    <h1 id="home-title" class="hero-title" data-i18n="home_welcome">Willkommen im Reichshof Hamburg</h1>
+                    <p class="hero-subtitle" data-i18n="home_subtitle">Ihr digitaler Concierge für barrierefreie Navigation und Information</p>
+                </div>
+                
+                <div class="manifesto glass" style="margin: 2rem 0; padding: 2rem; border-left: 4px solid #00F2FF;">
+                    <p class="main-statement" style="font-size: 1.4rem; color: #00F2FF; margin-bottom: 1rem;" data-i18n="manifesto_title">
+                        Dieses System ist für alle da.
+                    </p>
+                    <ul style="list-style: none; padding: 0; opacity: 0.9;">
+                        <li style="margin-bottom: 0.5rem;" data-i18n="manifesto_line_1">Für Gäste, die ihren Weg schnell finden wollen.</li>
+                        <li style="margin-bottom: 0.5rem;" data-i18n="manifesto_line_2">Für Menschen, die nicht fragen möchten.</li>
+                        <li style="margin-bottom: 0.5rem;" data-i18n="manifesto_line_3">Für Menschen, die nicht fragen können.</li>
+                        <li style="margin-bottom: 0.5rem;" data-i18n="manifesto_line_4">Auch für Systeme, die Unterstützung brauchen.</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem; border-top: 1px solid #333; padding-top: 1rem;">
+                        <strong data-i18n="manifesto_line_5">Niemand soll hier verloren gehen.</strong>
+                    </p>
+                </div>
+                
+                <div class="quick-cards">
+                    <article class="card" onclick="showSection('room-search')" role="button" tabindex="0">
+                        <i class="fas fa-search card-icon"></i>
+                        <h3 class="card-title" data-i18n="card_find_room_title">Zimmer finden</h3>
+                        <p class="card-text" data-i18n="card_find_room_text">Schnelle Suche mit neuer oder alter Zimmernummer. Voice Assistant in drei Sprachen verfügbar.</p>
+                    </article>
+                    <article class="card" onclick="showSection('hotel-info')" role="button" tabindex="0">
+                        <i class="fas fa-hotel card-icon"></i>
+                        <h3 class="card-title" data-i18n="card_hotel_info_title">Hotelinformationen</h3>
+                        <p class="card-text" data-i18n="card_hotel_info_text">Alle Bereiche des Hotels Bar eintausendeinhundertzehn Restaurant SPA Konferenzräume und mehr.</p>
+                    </article>
+                    <article class="card" onclick="showSection('accessibility')" role="button" tabindex="0">
+                        <i class="fas fa-wheelchair card-icon"></i>
+                        <h3 class="card-title" data-i18n="card_accessibility_title">Barrierefreiheit</h3>
+                        <p class="card-text" data-i18n="card_accessibility_text">Detaillierte Informationen zu barrierefreien Zimmern zweihundertzwölf zweihundertachtzehn dreihundertachtzehn und Zugängen.</p>
+                    </article>
+                    <article class="card" onclick="showSection('qr-codes')" role="button" tabindex="0">
+                        <i class="fas fa-qrcode card-icon"></i>
+                        <h3 class="card-title" data-i18n="card_qr_title">QR-Code System</h3>
+                        <p class="card-text" data-i18n="card_qr_text">Microsite QR-Codes für direkten Zugriff auf wichtige Informationen im Hotel.</p>
+                    </article>
+                </div>
+            </section>
+            
+            <section id="hotel-info" class="section hidden" aria-labelledby="hotel-info-title">
+                <h2 id="hotel-info-title" class="section-title" data-i18n="hotel_areas_title">Hotelbereiche und Informationen</h2>
+                
+                <div class="hotel-areas">
+                    <article class="area-card">
+                        <img src="img/Bar-1910-image.jpg" alt="Historische Bar 1910 im Art-Déco-Stil mit Holztresen und gemütlicher Beleuchtung" class="hotel-area-img" data-i18n-alt="bar1910_alt">
+                        <div class="area-content">
+                            <h3 data-i18n="bar1910_title">Bar 1910</h3>
+                            <p data-i18n="bar1910_description">Original-Art-Déco-Bar mit Sommerpause vom 28. Juli bis 3. September 2025. Geöffnet Dienstag bis Samstag 18:00 bis 01:00 Uhr.</p>
+                            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                                <button class="btn gold-bg" onclick="openBar1910Menu()">Bar Karte</button>
+                                <button class="btn" onclick="openBar1910Page()">Webseite</button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="area-card">
+                        <img src="img/Emils-image.jpg" alt="Emil's Bistro mit modernen Sitzgelegenheiten und Tischen in der Hotel-Lobby" class="hotel-area-img" data-i18n-alt="emils_alt">
+                        <div class="area-content">
+                            <h3 data-i18n="emils_title">Emil's Bistro Café und Bar</h3>
+                            <p data-i18n="emils_description">Täglich von neun Uhr bis null Uhr. Genießen Sie hausgemachte Kuchen Kaffee Snacks und Afternoon Tea.</p>
+                            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                                <button class="btn gold-bg" onclick="openEmilsFoodMenu()">Food Menu</button>
+                                <button class="btn" onclick="openEmilsDrinksMenu()">Drinks Menu</button>
+                                <button class="btn" onclick="openAfternoonTeaCard()">Afternoon Tea</button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="area-card">
+                        <img src="img/Stadt-Restaurant-image.jpg" alt="Stadt-Restaurant mit eleganten Tischen Stühlen und moderner Einrichtung" class="hotel-area-img" data-i18n-alt="restaurant_alt">
+                        <div class="area-content">
+                            <h3 data-i18n="restaurant_title">Stadt-Restaurant</h3>
+                            <p data-i18n="restaurant_description">Tradition trifft Moderne Frühstück Events und Abendbetrieb. Barrierefreier Zugang durch die Lobby.</p>
+                            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                                <button class="btn gold-bg" onclick="openRestaurantMenu()">Menü Menu</button>
+                                <button class="btn" onclick="openRestaurantReservation()">Reservierung</button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="area-card">
+                        <img src="img/Spa-Gym-image.jpg" alt="Modernes Fitnessstudio mit Cardiogeräten und freien Gewichten" class="hotel-area-img" data-i18n-alt="spa_alt">
+                        <div class="area-content">
+                            <h3 data-i18n="spa_title">SPA und Gym</h3>
+                            <p data-i18n="spa_description">Fitnessstudio vierundzwanzig Sieben Stunden geöffnet. Sauna täglich sechzehn Uhr bis zweiundzwanzig Uhr zehn Euro. Zugang über SPA-Fahrstuhl.</p>
+                            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                                <button class="btn gold-bg" onclick="openSpaPriceList()">Spa Preisliste</button>
+                                <button class="btn" onclick="showSpaContact()">Kontakt</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div style="margin-top: 2rem; display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+                    <button class="btn" onclick="openGiftVouchers()">Gutscheine</button>
+                    <button class="btn" onclick="openClubReichshof()">Club Reichshof</button>
+                    <button class="btn" onclick="openOffersPage()">Offers</button>
+                </div>
+
+                <div class="ops-grid">
+                    <div class="ops-card glass">
+                        <h3 id="fo-stay-title"><i class="fas fa-glass-cheers"></i> FO Empfehlung Im Haus genießen</h3>
+                        <p id="fo-stay-text">Für einen entspannten Abend empfehlen wir unser In-House-Angebot statt externer Wege im HBF-Umfeld.</p>
+                        <ul>
+                            <li id="fo-stay-item-1">Bar eintausendeinhundertzehn historische Atmosphäre Signature Drinks Billard.</li>
+                            <li id="fo-stay-item-2">Emil's Bar lockere Lounge für den späten Abend.</li>
+                            <li id="fo-stay-item-3">Stadt-Restaurant regionale Küche direkt im Haus.</li>
+                        </ul>
+                        <p id="fo-stay-note" class="ops-note">Sicherer am Abend kein Großstadttrubel kurze Wege direkt zum Zimmer.</p>
+                    </div>
+
+                    <div class="ops-card glass">
+                        <h3 id="luggage-title"><i class="fas fa-suitcase"></i> Gepäcksicherheit Kofferraum</h3>
+                        <ul>
+                            <li id="luggage-item-1">Gepäckraum nur für autorisiertes Personal videoüberwacht.</li>
+                            <li id="luggage-item-2">Ausgabe nur gegen Original-Ticket oder Koffernummer.</li>
+                            <li id="luggage-item-3">Tipp Foto von Koffer plus Ticket direkt beim Abgeben machen.</li>
+                        </ul>
+                        <p id="luggage-note" class="ops-note">Bei Ticketverlust Ausgabe nur mit Ausweis zur Sicherheit aller Gäste.</p>
+                    </div>
+
+                    <div class="ops-card glass">
+                        <h3 id="market-title"><i class="fas fa-store"></i> Vierundzwanzig Stunden Marketplace Kühlschrank</h3>
+                        <p id="market-location">Standort Lobby gegenüber Front Office neben dem Aufgang zu den Konferenzräumen.</p>
+                        <p id="market-content">Inhalt Getränke Snacks Reise-Utensilien Essentials für späte Anreisen.</p>
+                        <p id="market-note" class="ops-note">Rund um die Uhr verfügbar ideal bei Late Check-in oder Nachtbedarf.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="housekeeping" class="section hidden" aria-labelledby="housekeeping-title">
+                <h2 id="housekeeping-title" class="section-title gold-text">Housekeeping und Hilfe</h2>
+                <div class="feature-shell glass">
+                    <p id="housekeeping-intro" class="feature-intro">Service-Anfragen ohne Sprachbarriere Tippen Sie einfach auf den gewünschten Service.</p>
+                    <div id="housekeeping-request-grid" class="housekeeping-grid"></div>
+                    <div id="housekeeping-status" class="feature-status" aria-live="polite">Bitte wählen Sie einen Service aus.</div>
+                    <div class="feature-actions">
+                        <button class="btn gold-bg" onclick="sendHousekeepingFeedback()">
+                            <i class="fas fa-heart"></i> <span id="housekeeping-feedback-label">Feedback oder Trinkgeld</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="breakfast-guide" class="section hidden" aria-labelledby="breakfast-guide-title">
+                <h2 id="breakfast-guide-title" class="section-title gold-text">Frühstücks-Ampel und Allergen-Karte</h2>
+
+                <div class="feature-shell glass">
+                    <h3 id="breakfast-ampel-title">Frühstücks-Ampel Uhrzeiten</h3>
+                    <div class="ampel-list">
+                        <div class="ampel-row ampel-green"><span>🟢</span><strong>sechs Uhr dreißig bis acht Uhr</strong><span id="ampel-label-1">Sehr entspannt</span></div>
+                        <div class="ampel-row ampel-yellow"><span>🟡</span><strong>acht Uhr bis neun Uhr</strong><span id="ampel-label-2">Moderate Auslastung</span></div>
+                        <div class="ampel-row ampel-red"><span>🔴</span><strong>neun Uhr bis zehn Uhr dreißig</strong><span id="ampel-label-3">Stoßzeit Wartezeit möglich</span></div>
+                        <div class="ampel-row ampel-green"><span>🟢</span><strong>zehn Uhr dreißig bis elf Uhr dreißig</strong><span id="ampel-label-4">Gemütlicher Ausklang</span></div>
+                    </div>
+                </div>
+
+                <div class="feature-shell glass" style="margin-top:1.25rem;">
+                    <h3 id="allergen-title">Allergen-Karte visuell plus Filter</h3>
+                    <div id="allergen-filter-bar" class="allergen-filter-bar"></div>
+                    <div id="allergen-dish-grid" class="allergen-dish-grid"></div>
+                    <p id="allergen-note" class="ops-note" style="margin-top:0.8rem;">Hinweis Bei starker Unverträglichkeit bitte zusätzlich unser F und B-Team ansprechen.</p>
+                </div>
+            </section>
+
+            <section id="history-poi" class="section hidden" aria-labelledby="history-poi-title">
+                <h2 id="history-poi-title" class="section-title gold-text" onclick="speakHistoryRoute()" style="cursor:pointer;" title="Tap für gesprochene Navigation">Historie POI und Erlebnisorte</h2>
+
+                <div class="ops-grid">
+                    <div class="ops-card glass">
+                        <h3 id="history-langer-title"><img class="history-coin" src="img/Anton-Emil-Langer.png" alt="Anton Emil Langer"> Gründer-Gedenktafel</h3>
+                        <p id="history-langer-desc">POI Anton Emil Langer Gedenktafel im Zwischengeschoss oberer Treppenabsatz.</p>
+                        <p id="history-langer-note">Ein ruhiger Moment für die Geschichte des Hauses seit neunzehnhundertzehn.</p>
+                        <button id="history-langer-btn" class="btn" onclick="openHistoryPoiOnMap('langer_memorial')">Auf Etagenplan anzeigen</button>
+                        <div id="book-cross-sell" style="display:none; margin-top:1rem; padding:0.8rem; background:rgba(184,134,11,0.15); border-left:3px solid #b8860b; border-radius:4px;">
+                            <p id="book-cross-sell-text" style="margin:0; font-size:0.85rem; color:#e0e0e0;"><i class="fas fa-book" style="margin-right:0.4rem; color:#b8860b;"></i>Möchten Sie ein Stück Reichshof mit nach Hause nehmen Das exklusive Jubiläumsbuch zur Geschichte der Familie Langer erhalten Sie direkt bei unseren Kollegen am Front Office oder im Marketplace in der Lobby.</p>
+                        </div>
+                    </div>
+
+                    <div class="ops-card glass">
+                        <h3 id="history-book-title"><i class="fas fa-book"></i> Reichshof Buch</h3>
+                        <p id="history-book-desc">Standort Front Office und Marketplace-Regal.</p>
+                        <p id="history-book-note">Exklusives Buch zur Geschichte des Reichshofs zum Lesen oder als Souvenir.</p>
+                        <button id="history-book-btn" class="btn" onclick="openHistoryPoiOnMap('reichshof_book')">Weg zum Marketplace</button>
+                    </div>
+
+                    <div class="ops-card glass">
+                        <h3 id="history-autosilo-title"><i class="fas fa-car"></i> Historisches Autosilo</h3>
+                        <p id="history-autosilo-desc">Besichtigung als geführte Story-Station über Sales- oder Event-Kollegen möglich.</p>
+                        <p id="history-autosilo-note" class="ops-note">Bitte Führung am Front Office oder bei Sales anfragen.</p>
+                    </div>
+                </div>
+
+                <div class="feature-shell glass" style="margin-top:1.2rem;">
+                    <h3 id="history-team-title"><i class="fas fa-users"></i> Unser Concierge-Team</h3>
+                    <p id="history-team-text" class="ops-note">Liebe Gäste für alle Insiderfragen oder Expertenwissen Zögern Sie nicht unseren menschlichen Concierge um Rat zu bitten. Sie finden ihn am Front Office meist ganz rechts am Tresen Beschilderung vorhanden. Wir sind ein Reichshof-Team mit Respekt und Teamplay heute wie in hundert Jahren.</p>
+                    <div style="margin-top:0.8rem;">
+                        <button id="history-team-btn" class="btn" onclick="openFrontOfficeCall()"><i class="fas fa-concierge-bell"></i> Front Office anrufen</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="room-search" class="section hidden" aria-labelledby="room-search-title">
+                <h2 id="room-search-title" class="section-title" data-i18n="nav_room_search">Zimmersuche und Navigation</h2>
+                
+                <div class="search-box">
+                    <label for="room-input" class="sr-only" data-i18n="search_placeholder">Zimmernummer eingeben...</label>
+                    <input type="text" 
+                           id="room-input" 
+                           class="search-input" 
+                           data-i18n-placeholder="search_placeholder"
+                           placeholder="Zimmernummer eingeben..."
+                           aria-label="Zimmernummer">
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <button class="btn gold-bg" onclick="searchRoom()" style="flex: 1;">
+                            <i class="fas fa-location-arrow"></i> <span data-i18n="find_room">ZIMMER FINDEN</span>
+                        </button>
+                        <button class="btn" onclick="showExampleRooms()" style="flex: 1;">
+                            <i class="fas fa-list"></i> <span data-i18n="show_examples">BEISPIELE ANZEIGEN</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="search-result" class="result-box" role="region" aria-live="polite">
+                    <p style="text-align: center; color: #94a3b8;" data-i18n="search_initial_hint">
+                        Geben Sie eine Zimmernummer ein um Informationen und Navigationsanleitung zu erhalten.
+                    </p>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;" data-i18n="accessible_rooms_title">Barrierefreie Zimmer</h3>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn" onclick="searchRoomNumber('212')" data-i18n="room_212">Zimmer zweihundertzwölf</button>
+                        <button class="btn" onclick="searchRoomNumber('218')" data-i18n="room_218">Zimmer zweihundertachtzehn</button>
+                        <button class="btn" onclick="searchRoomNumber('318')" data-i18n="room_318">Zimmer dreihundertachtzehn</button>
+                        <button class="btn" onclick="searchRoomNumber('327')" data-i18n="room_327">Zimmer dreihundertsiebenundzwanzig</button>
+                        <button class="btn" onclick="searchRoomNumber('411')" data-i18n="room_411">Zimmer vierhundertelf</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="floor-plans" class="section hidden" aria-labelledby="floor-plans-title">
+                <h2 id="floor-plans-title" class="section-title" data-i18n="floor_plans_title">Grundrisse und Etagenpläne</h2>
+                
+                <div class="floor-tabs">
+                    <button class="floor-tab" onclick="loadFloor(0)" data-i18n="floor_eg">Erdgeschoss</button>
+                    <button class="floor-tab active" onclick="loadFloor(1)" data-i18n="floor_1og">Eins Punkt Obergeschoss</button>
+                    <button class="floor-tab" onclick="loadFloor(2)" data-i18n="floor_2og">Zwei Punkt Obergeschoss</button>
+                    <button class="floor-tab" onclick="loadFloor(3)" data-i18n="floor_3og">Drei Punkt Obergeschoss</button>
+                    <button class="floor-tab" onclick="loadFloor(4)" data-i18n="floor_4og">Vier Punkt Obergeschoss</button>
+                    <button class="floor-tab" onclick="loadFloor(5)" data-i18n="floor_5og">Fünf Punkt Obergeschoss</button>
+                    <button class="floor-tab" onclick="loadFloor(6)" data-i18n="floor_6og">Sechs Punkt Obergeschoss</button>
+                </div>
+                
+                <div class="map-container">
+                    <div id="svg-container" class="map-placeholder">
+                        <i class="fas fa-map-marked-alt" style="font-size: 4rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--accent); margin-bottom: 0.5rem;" data-i18n="floor_plan_placeholder_title">Etagenplan wählen</h3>
+                        <p data-i18n="floor_plan_placeholder_text">Wählen Sie eine Etage aus um den Grundriss anzuzeigen.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(251, 191, 36, 0.1); border-radius: var(--border-radius);">
+                    <h4 style="color: var(--accent); margin-bottom: 0.5rem;"><i class="fas fa-info-circle"></i> <span data-i18n="floor_plan_hint_title">Hinweis</span></h4>
+                    <p data-i18n="floor_plan_hint_text">Klicken Sie auf ein Zimmer im Grundriss um direkt zur Zimmersuche zu springen.</p>
+                </div>
+            </section>
+            
+            <section id="accessibility" class="section hidden" aria-labelledby="accessibility-title">
+                <h2 id="accessibility-title" class="section-title" data-i18n="accessibility_title">Barrierefreiheit</h2>
+                
+                <div class="zimmer-grid">
+                    <article class="zimmer-karte">
+                        <div class="area-content">
+                            <h3 style="color: var(--accent);" data-i18n="room_318_full">Zimmer dreihundertachtzehn drei Punkt Obergeschoss</h3>
+                            <div style="margin: 1rem 0;">
+                                <p><strong data-i18n="door_width">Türbreite</strong> <span data-i18n="door_90cm">neunzig Zentimeter</span></p>
+                                <p><strong data-i18n="bath">Bad</strong> <span data-i18n="bath_318">Bodengleiche Dusche Haltegriffe</span></p>
+                                <p><strong data-i18n="bed">Bett</strong> <span data-i18n="bed_318">Höhe fünfundfünfzig Zentimeter elektrisch verstellbar</span></p>
+                            </div>
+                            <button class="btn gold-bg" onclick="searchRoomNumber('318')" data-i18n="navigate_to_318">
+                                Navigation zu Zimmer dreihundertachtzehn
+                            </button>
+                        </div>
+                        <div class="notruf-info">
+                            <strong data-i18n="emergency_system">Notrufsystem</strong>
+                            <ul>
+                                <li data-i18n="emergency_bed_button">Bettknopf geht zur Rezeption</li>
+                                <li data-i18n="emergency_bath_cord">Badleine geht zur OTIS-Notrufzentrale</li>
+                                <li data-i18n="emergency_flashing_alarm">Blinkender Alarm vor Zimmer</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="zimmer-karte">
+                        <div class="area-content">
+                            <h3 style="color: var(--accent);" data-i18n="room_212_full">Zimmer zweihundertzwölf zwei Punkt Obergeschoss</h3>
+                            <div style="margin: 1rem 0;">
+                                <p><strong data-i18n="door_width">Türbreite</strong> <span data-i18n="door_90cm">neunzig Zentimeter</span></p>
+                                <p><strong data-i18n="bath">Bad</strong> <span data-i18n="bath_212">Unterfahrbares Waschbecken</span></p>
+                                <p><strong data-i18n="turning_circle">Bewegungsfläche</strong> <span data-i18n="turning_circle_150">einhundertfünfzig Zentimeter Wendekreis</span></p>
+                            </div>
+                            <button class="btn gold-bg" onclick="searchRoomNumber('212')" data-i18n="navigate_to_212">
+                                Navigation zu Zimmer zweihundertzwölf
+                            </button>
+                        </div>
+                        <div class="notruf-info">
+                            <strong data-i18n="emergency_system">Notrufsystem</strong>
+                            <ul>
+                                <li data-i18n="emergency_bed_button">Bettknopf geht zur Rezeption</li>
+                                <li data-i18n="emergency_bath_cord">Badleine geht zur OTIS-Notrufzentrale</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="zimmer-karte">
+                        <div class="area-content">
+                            <h3 style="color: var(--accent);" data-i18n="room_218_full">Zimmer zweihundertachtzehn zwei Punkt Obergeschoss</h3>
+                            <div style="margin: 1rem 0;">
+                                <p><strong data-i18n="door_width">Türbreite</strong> <span data-i18n="door_90cm">neunzig Zentimeter</span></p>
+                                <p><strong data-i18n="bath">Bad</strong> <span data-i18n="bath_218">Duschstuhl Haltegriffe</span></p>
+                                <p><strong data-i18n="bed">Bett</strong> <span data-i18n="bed_218">Höhe fünfzig Zentimeter</span></p>
+                            </div>
+                            <button class="btn gold-bg" onclick="searchRoomNumber('218')" data-i18n="navigate_to_218">
+                                Navigation zu Zimmer zweihundertachtzehn
+                            </button>
+                        </div>
+                        <div class="notruf-info">
+                            <strong data-i18n="emergency_system">Notrufsystem</strong>
+                            <ul>
+                                <li data-i18n="emergency_bed_button">Bettknopf geht zur Rezeption</li>
+                                <li data-i18n="emergency_bath_cord">Badleine geht zur OTIS-Notrufzentrale</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                
+                <div style="margin-top: 3rem; padding: 2rem; background: var(--primary-light); border-radius: var(--border-radius);">
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;"><i class="fas fa-elevator"></i> <span data-i18n="lift_guide_title">Lift-Guide</span></h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <p><span style="color: #22c55e; font-weight: bold;">🟢</span> <strong data-i18n="spa_elevator">SPA-Aufzug einhundertzehn Zentimeter</strong><br>
+                            <span data-i18n="spa_elevator_desc">Voll barrierefrei zu allen Etagen und SPA.</span></p>
+                        </div>
+                        <div>
+                            <p><span style="color: #ef4444; font-weight: bold;">🔴</span> <strong data-i18n="th9_elevator">TH neun Historisch siebzig Zentimeter</strong><br>
+                            <span data-i18n="th9_elevator_desc">Zu schmal für Rollstühle. Historischer Aufzug.</span></p>
+                        </div>
+                        <div>
+                            <p><span style="color: var(--accent); font-weight: bold;">ℹ️</span> <strong data-i18n="elevator_operation">Bedienung</strong><br>
+                            <span data-i18n="elevator_operation_desc">Zimmerkarte für Etagen ab zwei Punkt Obergeschoss erforderlich.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="emergency" class="section hidden" aria-labelledby="emergency-title">
+                <h2 id="emergency-title" class="section-title" style="color: var(--danger);" data-i18n="emergency_title">Notfall und Sicherheit</h2>
+                
+                <div class="emergency-grid">
+                    <div class="emergency-item">
+                        <i class="fas fa-bell emergency-icon"></i>
+                        <h4 data-i18n="emergency_flashing_title">Blinkender Alarm</h4>
+                        <p data-i18n="emergency_flashing_desc">Optisches Signal vor Zimmern zweihundertzwölf zweihundertachtzehn dreihundertachtzehn bei Notfall.</p>
+                    </div>
+                    
+                    <div class="emergency-item">
+                        <i class="fas fa-bath emergency-icon"></i>
+                        <h4 data-i18n="emergency_pullcord_title">Bad-Zugleine</h4>
+                        <p data-i18n="emergency_pullcord_desc">Vierundzwanzig Sieben Notruf. Tür wird automatisch für Rettungskräfte entriegelt.</p>
+                    </div>
+                    
+                    <div class="emergency-item">
+                        <i class="fas fa-phone-alt emergency-icon"></i>
+                        <h4 data-i18n="emergency_numbers_title">Notrufnummern</h4>
+                        <p data-i18n="emergency_numbers_desc">Rezeption 156. Haustechnik 770. Notruf 112.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(239, 68, 68, 0.1); border-radius: var(--border-radius); border: 1px solid var(--danger);">
+                    <h4 style="color: var(--danger); margin-bottom: 1rem;"><i class="fas fa-exclamation-triangle"></i> <span data-i18n="emergency_note_title">Wichtiger Hinweis</span></h4>
+                    <p><strong data-i18n="fire_department">Feuerwehr</strong> <span data-i18n="fire_department_time">In circa zehn Minuten vor Ort.</span> <span data-i18n="fire_doors">Brandschutztüren schließen automatisch.</span></p>
+                    <p><strong data-i18n="smoking_ban">Rauchen verboten</strong> <span data-i18n="smoking_ban_desc">im gesamten Hotel Hohe Strafkosten.</span></p>
+                    <p><strong data-i18n="evacuation">Evakuierung</strong> <span data-i18n="evacuation_point">Sammelpunkt vor dem Haupteingang.</span></p>
+                </div>
+
+                <div id="sos-panel" style="display:none; margin-top: 1rem; padding: 1rem; background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; border-radius: var(--border-radius);">
+                    <h4 style="color:#ef4444; margin-bottom:0.5rem;">Notfall aktiv</h4>
+                    <p style="margin:0;">Rezeption intern 156 · Haustechnik 770 · Intern 555 · Notruf 112</p>
+                </div>
+
+                <div id="emergency-plan-container" style="margin-top: 20px;">
+                    <h2 id="safety-title" style="display:none; color: #b30000;">Evakuierungsplan</h2>
+                    <iframe id="pdf-viewer" src="" title="Evakuierungsplan" style="width: 100%; height: 600px; border: 2px solid #b30000; display: none; border-radius: 10px;"></iframe>
+                </div>
+            </section>
+
+            <section id="qr-codes" class="section hidden" aria-labelledby="qr-codes-title">
+                <h2 id="qr-codes-title" class="section-title gold-text">QR-Code Navigation</h2>
+                
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div class="glass" style="padding: 2rem; border-radius: 20px; border-left: 4px solid #00F2FF;">
+                        <p style="color: #00F2FF; font-size: 1.4rem; font-weight: bold; margin-bottom: 1rem;">
+                            Für jeden gedacht.
+                        </p>
+                        <ul style="list-style: none; padding: 0; color: #f8fafc; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;">✓ Für Gäste die ihren Weg schnell finden wollen.</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Für Menschen die nicht fragen möchten.</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Für Menschen die nicht fragen können.</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Auch für Systeme die Unterstützung brauchen.</li>
+                        </ul>
+                        <p style="color: #fbbf24; text-align: center; margin-top: 1rem; font-style: italic;">
+                            Hier findet jeder seinen Weg.
+                        </p>
+                    </div>
+
+                    <div class="glass newspaper-block">
+                        <h3 style="color: #fbbf24; margin-bottom: 0.8rem;">Kostenlose Zeitungen und Magazine</h3>
+                        <p style="color:#cbd5e1; margin-bottom: 1rem;">Für Gäste direkter Zugriff zu tagesaktuellen Zeitungen und Magazinen.</p>
+                        <button class="btn gold-bg" onclick="toggleNewspaperQR()">
+                            <i class="fas fa-newspaper"></i> QR für Newspaper anzeigen
+                        </button>
+                        <div id="newspaper-qr-panel" style="display:none; margin-top:1rem; text-align:center;">
+                            <div style="background:#fff; display:inline-block; padding:12px; border-radius:12px;">
+                                <canvas id="newspaper-qr-canvas"></canvas>
+                                <img id="newspaper-qr-fallback" src="img/ai-robot-smiley.gif" onerror="this.onerror=null;this.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https%3A%2F%2Fwww.sharemagazines.de%2Flesen';" alt="AI Robot Smiley" style="display:none; width:180px; height:180px;">
+                            </div>
+                            <p style="margin-top:0.7rem;"><a href="https://www.sharemagazines.de/lesen" target="_blank" rel="noopener" style="color:#00F2FF;">www Punkt sharemagazines Punkt de Schrägstrich lesen</a></p>
+                        </div>
+                    </div>
+
+                    <div class="glass" style="padding: 2rem; border-radius: 20px; text-align: center;">
+                        <h3 style="color: #fbbf24; margin-bottom: 1.5rem;">Zimmer-Navigator Generator</h3>
+                        <div id="qr-runtime-badge" role="status" aria-live="polite" data-i18n="qr_online_ready" style="margin: 0 0 1rem 0; padding: 0.65rem 0.9rem; border-radius: 10px; border: 1px solid rgba(34,197,94,0.4); background: rgba(34,197,94,0.12); color: #86efac; font-size: 0.9rem;">
+                            <i class="fas fa-circle" style="margin-right: 8px;"></i>Online-Modus QR bereit
+                        </div>
+                        <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 2rem;">
+                            <input type="text" id="roomNumberInput" placeholder="Zimmernummer" style="padding: 10px; border-radius: 10px; border: none; width: 120px; text-align: center;">
+                            <button onclick="generateConciergeQR()" class="qr-button" style="min-height: auto; padding: 10px 20px; background: #fbbf24; color: black; font-weight: bold;">
+                                Erstellen
+                            </button>
+                        </div>
+                        <div id="qrcode-container" style="background: white; padding: 15px; display: inline-block; border-radius: 15px; visibility: hidden;">
+                            <canvas id="qr-canvas"></canvas>
+                            <p class="print-only" style="display:none; color: black; margin-top: 5px;">
+                                Hotel Reichshof Zimmer <span id="print-room-num"></span> Ihr digitaler Concierge
+                            </p>
+                        </div>
+                        <button id="printButton" onclick="printQRCode()" style="visibility: hidden; background: #22c55e; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                            <i class="fas fa-print"></i> QR-Code drucken
+                        </button>
+                        <p id="qr-status" style="color: #94a3b8; margin-top: 1rem;">Geben Sie eine Zimmernummer ein um den Navigator zu starten.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="section hidden" aria-labelledby="gallery-title">
+                <h2 id="gallery-title" class="section-title" data-i18n="gallery_title">Fotogalerie</h2>
+                
+                <div class="gallery-filter">
+                    <button class="btn active" onclick="filterGallery('all')" data-i18n="gallery_all">Alle</button>
+                    <button class="btn" onclick="filterGallery('lobby')" data-i18n="gallery_lobby">Lobby</button>
+                    <button class="btn" onclick="filterGallery('zimmer')" data-i18n="gallery_rooms">Zimmer</button>
+                    <button class="btn" onclick="filterGallery('restaurant')" data-i18n="gallery_restaurant">Restaurant</button>
+                    <button class="btn" onclick="filterGallery('spa')" data-i18n="gallery_spa">SPA</button>
+                    <button class="btn" onclick="filterGallery('konferenz')" data-i18n="gallery_conference">Konferenz</button>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="lobby">
+                       <img src="img/Lobby-Panoramafoto.jpeg" alt="Panoramafoto der Lobby mit Rezeption Sitzbereichen und Zugang zum Restaurant" class="hotel-area-img" data-i18n-alt="gallery_lobby_alt">
+                    </div>
+                    <div class="gallery-item" data-category="restaurant">
+                        <img src="img/Stadt-Restaurant-image.jpg" alt="Blick auf das Stadt-Restaurant von der Lobby aus" class="hotel-area-img" data-i18n-alt="gallery_restaurant_alt"> 
+                    </div>
+                    <div class="gallery-item" data-category="zimmer">
+                       <img src="img/zimmer.jpg" alt="Modernes Hotelzimmer mit komfortabler Einrichtung" class="hotel-area-img" data-i18n-alt="gallery_room_alt">
+                    </div>
+                    <div class="gallery-item" data-category="spa">
+                        <img src="img/Spa-Gym-image.jpg" alt="Modernes Fitnessstudio mit verschiedenen Trainingsgeräten" class="hotel-area-img" data-i18n-alt="gallery_spa_alt">
+                    </div>
+                    <div class="gallery-item" data-category="konferenz">
+                        <img src="img/Hans-Albers.jpg" alt="Moderner Konferenzraum mit Tischen und Stühlen" class="hotel-area-img" data-i18n-alt="gallery_conference_alt">
+                    </div>
+                    <div class="gallery-item" data-category="lobby">
+                      <img src="img/Bar-1910-image.jpg" alt="Historische Bar eintausendeinhundertzehn im Art-Déco-Stil" class="hotel-area-img" data-i18n-alt="gallery_bar1910_alt">
+                    </div>
+                </div>
+            </section>
+
+            <section id="admin-panel" class="section hidden" aria-labelledby="admin-title">
+                <h2 id="admin-title" class="section-title" style="color: #ef4444;">🔧 Admin Panel - LIFT & TH Marker</h2>
+                
+                <div class="glass" style="padding: 2rem; margin-bottom: 2rem; border-left: 4px solid #ef4444;">
+                    <h3 style="color: #fbbf24; margin-bottom: 1rem;">📍 Referenzpunkte auf Grundrissen markieren</h3>
+                    <p style="color: #94a3b8; margin-bottom: 1.5rem;">
+                        Markiere die Position von <strong style="color: #22c55e;">LIFT</strong> (Aufzug) und 
+                        <strong style="color: #3b82f6;">TH</strong> (Treppenhaus Nord/Süd) auf jedem Etagenplan.
+                    </p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                        <!-- EG -->
+                        <div class="glass" style="padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.1);">
+                            <h4 style="color: #00F2FF; margin-bottom: 1rem;"><i class="fas fa-layer-group"></i> Erdgeschoss (EG)</h4>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <button onclick="markReferencePoint('EG', 'LIFT_MAIN')" class="btn" style="background: #22c55e; padding: 0.75rem;">
+                                    <i class="fas fa-elevator"></i> LIFT markieren
+                                </button>
+                                <button onclick="markReferencePoint('EG', 'TH_NORTH')" class="btn" style="background: #3b82f6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Nord markieren
+                                </button>
+                                <button onclick="markReferencePoint('EG', 'TH_SOUTH')" class="btn" style="background: #8b5cf6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Süd markieren
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 1. OG -->
+                        <div class="glass" style="padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.1);">
+                            <h4 style="color: #00F2FF; margin-bottom: 1rem;"><i class="fas fa-layer-group"></i> 1. Obergeschoss</h4>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <button onclick="markReferencePoint('1OG', 'LIFT_MAIN')" class="btn" style="background: #22c55e; padding: 0.75rem;">
+                                    <i class="fas fa-elevator"></i> LIFT markieren
+                                </button>
+                                <button onclick="markReferencePoint('1OG', 'TH_NORTH')" class="btn" style="background: #3b82f6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Nord markieren
+                                </button>
+                                <button onclick="markReferencePoint('1OG', 'TH_SOUTH')" class="btn" style="background: #8b5cf6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Süd markieren
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 2. OG -->
+                        <div class="glass" style="padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.1);">
+                            <h4 style="color: #00F2FF; margin-bottom: 1rem;"><i class="fas fa-layer-group"></i> 2. Obergeschoss</h4>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <button onclick="markReferencePoint('2OG', 'LIFT_MAIN')" class="btn" style="background: #22c55e; padding: 0.75rem;">
+                                    <i class="fas fa-elevator"></i> LIFT markieren
+                                </button>
+                                <button onclick="markReferencePoint('2OG', 'TH_NORTH')" class="btn" style="background: #3b82f6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Nord markieren
+                                </button>
+                                <button onclick="markReferencePoint('2OG', 'TH_SOUTH')" class="btn" style="background: #8b5cf6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Süd markieren
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 3. OG -->
+                        <div class="glass" style="padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.1);">
+                            <h4 style="color: #00F2FF; margin-bottom: 1rem;"><i class="fas fa-layer-group"></i> 3. Obergeschoss</h4>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <button onclick="markReferencePoint('3OG', 'LIFT_MAIN')" class="btn" style="background: #22c55e; padding: 0.75rem;">
+                                    <i class="fas fa-elevator"></i> LIFT markieren
+                                </button>
+                                <button onclick="markReferencePoint('3OG', 'TH_NORTH')" class="btn" style="background: #3b82f6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Nord markieren
+                                </button>
+                                <button onclick="markReferencePoint('3OG', 'TH_SOUTH')" class="btn" style="background: #8b5cf6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Süd markieren
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 4. OG -->
+                        <div class="glass" style="padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.1);">
+                            <h4 style="color: #00F2FF; margin-bottom: 1rem;"><i class="fas fa-layer-group"></i> 4. Obergeschoss</h4>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <button onclick="markReferencePoint('4OG', 'LIFT_MAIN')" class="btn" style="background: #22c55e; padding: 0.75rem;">
+                                    <i class="fas fa-elevator"></i> LIFT markieren
+                                </button>
+                                <button onclick="markReferencePoint('4OG', 'TH_NORTH')" class="btn" style="background: #3b82f6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Nord markieren
+                                </button>
+                                <button onclick="markReferencePoint('4OG', 'TH_SOUTH')" class="btn" style="background: #8b5cf6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Süd markieren
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 5. OG -->
+                        <div class="glass" style="padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.1);">
+                            <h4 style="color: #00F2FF; margin-bottom: 1rem;"><i class="fas fa-layer-group"></i> 5. Obergeschoss</h4>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <button onclick="markReferencePoint('5OG', 'LIFT_MAIN')" class="btn" style="background: #22c55e; padding: 0.75rem;">
+                                    <i class="fas fa-elevator"></i> LIFT markieren
+                                </button>
+                                <button onclick="markReferencePoint('5OG', 'TH_NORTH')" class="btn" style="background: #3b82f6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Nord markieren
+                                </button>
+                                <button onclick="markReferencePoint('5OG', 'TH_SOUTH')" class="btn" style="background: #8b5cf6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Süd markieren
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 6. OG -->
+                        <div class="glass" style="padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.1);">
+                            <h4 style="color: #00F2FF; margin-bottom: 1rem;"><i class="fas fa-layer-group"></i> 6. Obergeschoss</h4>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <button onclick="markReferencePoint('6OG', 'LIFT_MAIN')" class="btn" style="background: #22c55e; padding: 0.75rem;">
+                                    <i class="fas fa-elevator"></i> LIFT markieren
+                                </button>
+                                <button onclick="markReferencePoint('6OG', 'TH_NORTH')" class="btn" style="background: #3b82f6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Nord markieren
+                                </button>
+                                <button onclick="markReferencePoint('6OG', 'TH_SOUTH')" class="btn" style="background: #8b5cf6; padding: 0.75rem;">
+                                    <i class="fas fa-stairs"></i> TH Süd markieren
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1rem; background: rgba(239, 68, 68, 0.1); border-radius: 10px; border: 1px solid rgba(239, 68, 68, 0.3);">
+                        <p style="color: #fca5a5; font-size: 0.9rem;">
+                            <i class="fas fa-info-circle"></i> <strong>Hinweis:</strong> 
+                            Klicke auf einen Button, dann öffnet sich der Grundriss. 
+                            Setze die Markierung durch Klicken oder Ziehen auf die richtige Position.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer" role="contentinfo">
+            <div class="footer-links">
+                <a href="#" onclick="showSection('accessibility')" data-i18n="footer_accessibility">Barrierefreiheit</a>
+                <a href="#" onclick="showSection('emergency')" data-i18n="footer_emergency">Notfall</a>
+                <a href="#" onclick="showSection('qr-codes')" data-i18n="footer_qr">QR-Codes</a>
+                <a href="tel:+49403702590" data-i18n="footer_reception">📞 Rezeption: +49 40 370 2590</a>
+                <a href="tel:112" style="color:#ef4444; font-weight:bold;" aria-label="Notruf 112 anrufen">Notruf 112</a>
+            </div>
+            
+            <div style="margin-top: 1.5rem; font-size: 0.9rem; color: #94a3b8;">
+                <p data-i18n="footer_copyright">
+                    © 2026 Reichshof Hamburg | Digital Concierge v3.0.0
+                </p>
+
+                <p style="margin-top: 0.5rem;">
+                    <span id="connection-status" style="color: #22c55e;" data-i18n="online" aria-live="polite" role="status">
+                        ● Online – System aktiv
+                    </span> | 
+
+                    <span id="version">Build Version 3.0.0</span> |
+
+                    <button onclick="requestNotificationPermission()" style="background: none; border: none; color: var(--accent); cursor: pointer; text-decoration: underline;" data-i18n="enable_push">
+                        Push-Dienste aktivieren
+                    </button>
+                </p>
+
+                <div id="tech-dashboard" class="tech-dashboard" aria-live="polite">
+                    <h4>System Monitor</h4>
+                    <div id="tech-dashboard-content">Lade Systemüberprüfungen...</div>
+                    <button onclick="openPinModal('fire-protocol')" style="margin-top:0.75rem; background: #22c55e; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; border: none;">
+                        Protokoll für die Feuerwehr generieren
+                    </button>
+                    <div id="firefighter-protocol" class="fire-protocol">
+                        <h5>Protokoll für die Feuerwehr – Kurzfassung</h5>
+                        <p><strong>Ausgestellt am</strong> <span id="fire-protocol-timestamp">—</span></p>
+                        <p><strong>Adresse</strong> Reichshof Hamburg · Kirchenallee 34-36 · 20099 Hamburg</p>
+                        <p><strong>Interne Notrufnummern</strong> Rezeption 156 · Haustechnik 770 · Intern 555 · Notruf 112</p>
+                        <ul>
+                            <li><strong>Defibrillator (AED)</strong> Front Office / Backoffice</li>
+                            <li><strong>Tragestuhl Treppenrettung</strong> 1. OG · Serviceraum TH-7 · Übergang Zimmer 114 bis 118</li>
+                            <li><strong>Sammelpunkt</strong> Vor dem Haupteingang</li>
+                        </ul>
+                        <p><strong>Hinweis</strong> Brandschutztüren schließen automatisch. Zimmerkarten im 1. OG für Flurbereiche sofort erforderlich (Richtung Zimmer 103 oder 104). Aufzug ins 1. OG ohne Karte möglich. Ab 2. OG durchgehend erforderlich.</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 1rem; font-size: 0.8rem;" data-i18n="wcag_statement">
+                    WCAG 2.1 AA konform | Barrierefreiheit ab 28.06.2025 verpflichtend
+                </p>
+
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; color:#cbd5e1;" data-i18n="system_message">
+                    Dieses System ist für alle da. Niemand soll hier verloren gehen.
+                </p>
+            </div>
+        </footer>
+    </div>
+    
+    <button class="voice-btn" id="voice-btn" onclick="toggleVoiceAssistant()" aria-label="Sprachsteuerung starten oder stoppen" aria-pressed="false" data-i18n-aria="voice_assistant_label">
+        <i class="fas fa-microphone" id="mic-icon"></i>
+    </button>
+    <div id="mic-active-indicator" class="mic-active-indicator">MIC OFF</div>
+    <div id="speech-live-caption" role="status" aria-live="polite" style="display:none; position:fixed; right:20px; bottom:230px; max-width:min(520px,calc(100vw - 40px)); background:rgba(0,0,0,0.86); color:#f8fafc; border:1px solid rgba(251,191,36,0.45); border-radius:12px; padding:10px 12px; z-index:10001; font-size:0.92rem; line-height:1.4; box-shadow:0 8px 24px rgba(0,0,0,0.35);"></div>
+
+    <button id="sosButton" onclick="activateSOS()" style="position: fixed; bottom: 160px; right: 20px; width: 70px; height: 70px; border-radius: 50%; background: #ef4444; color: white; font-weight: bold; border: 4px solid white; box-shadow: 0 4px 20px rgba(239,68,68,0.5); z-index: 10000; cursor: pointer; font-size: 1.2rem;">Notfall</button>
+    
+    <div id="voice-settings-modal" role="dialog" aria-modal="true" aria-hidden="true" style="display:none; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); background:var(--primary-light); color:white; padding:16px; border-radius:12px; z-index:20001; width:360px; box-shadow:0 10px 30px rgba(0,0,0,0.4);">
+        <h3 style="margin-top:0;" data-i18n="voice_settings_title">Stimmeinstellungen</h3>
+        <p style="font-size:13px; color:#cbd5e1;" data-i18n="voice_settings_desc">Wählen Sie bevorzugte Stimmen für jede Sprache.</p>
+        <div style="display:flex; gap:8px; margin-top:8px; flex-direction:column;">
+            <label data-i18n="language_de">Deutsch</label>
+            <div style="display:flex; gap:8px;"><select id="voice-select-de" style="flex:1;"></select><button class="btn" onclick="previewVoice('de')" data-i18n="voice_preview">Vorschau</button></div>
+            <label data-i18n="language_en">English</label>
+            <div style="display:flex; gap:8px;"><select id="voice-select-en" style="flex:1;"></select><button class="btn" onclick="previewVoice('en')" data-i18n="voice_preview">Preview</button></div>
+            <label data-i18n="language_es">Español</label>
+            <div style="display:flex; gap:8px;"><select id="voice-select-es" style="flex:1;"></select><button class="btn" onclick="previewVoice('es')" data-i18n="voice_preview">Vista</button></div>
+        </div>
+        <div style="display:flex; gap:8px; margin-top:12px; justify-content:flex-end;">
+            <button class="btn" onclick="closeVoiceSettings()" data-i18n="voice_close">Schliessen</button>
+            <button class="btn gold-bg" onclick="saveVoiceSelection()" data-i18n="voice_save">Speichern</button>
+        </div>
+    </div>
+
+    <div id="pin-modal-overlay" class="pin-overlay" onclick="closePinModal()" style="display:none;"></div>
+    <div id="pin-modal" class="pin-modal" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;">
+        <h3 style="margin-top:0;">PIN erforderlich</h3>
+        <p style="font-size:13px; color:#cbd5e1;">Bitte PIN eingeben um zu drucken.</p>
+        <input id="pin-input" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="PIN" class="pin-input" />
+        <div class="pin-actions">
+            <button class="btn" onclick="closePinModal()">Abbrechen</button>
+            <button class="btn gold-bg" onclick="submitPinModal()">Bestätigen</button>
+        </div>
+        <p id="pin-error" class="pin-error" style="display:none;">Falscher PIN.</p>
+    </div>
+    
+    <div class="wcag-toolbar" role="toolbar" aria-label="Barrierefreiheits Werkzeuge">
+        <button class="wcag-btn" onclick="increaseFontSize()" aria-label="Schriftgröße erhöhen" data-i18n-aria="increase_font">
+            A plus
+        </button>
+        <button class="wcag-btn" onclick="decreaseFontSize()" aria-label="Schriftgröße verringern" data-i18n-aria="decrease_font">
+            A minus
+        </button>
+        <button class="wcag-btn" onclick="resetFontSize()" aria-label="Schriftgröße zurücksetzen" data-i18n-aria="reset_font">
+            A
+        </button>
+        <button class="wcag-btn" onclick="speakPageTitle()" aria-label="Seitentitel vorlesen" data-i18n-aria="speak_title">
+            Lautsprecher
+        </button>
+    </div>
+    
+    <div id="analytics-overlay" class="analytics-overlay" onclick="toggleAnalytics()"></div>
+    <div id="analytics-panel" class="analytics-panel glass">
+        <h2 class="gold-text"><i class="fas fa-chart-line"></i> <span data-i18n="analytics_title">Nutzung und Analytics</span></h2>
+        <div id="analytics-content" style="margin:20px 0;">Lade Nutzungsdaten...</div>
+        <button class="btn gold-bg" onclick="toggleAnalytics()" data-i18n="close">Schließen</button>
+    </div>
+
+    <div id="pwa-banner" style="display:none; position:fixed; bottom:20px; left:20px; background:white; padding:15px; z-index:10000; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3); align-items:center; gap:10px;">
+        <p style="color:black; margin:0;">Als App installieren?</p>
+        <button onclick="installPwa()" style="background:gold; padding:5px 10px; border:none; border-radius:5px;">Installieren</button>
+        <button onclick="dismissPwaBanner()" style="background:lightgrey; padding:5px 10px; border:none; border-radius:5px;">X</button>
+    </div>
+ 
+    <div id="notification" class="notification" role="alert"></div>
+    
+    <script src="js/data/pdf-map.js?v=3.0.5"></script>
+    <script src="js/voice-navigation.js?v=3.0.4"></script>
+    <script src="js/voice-navigation-builder.js?v=3.0.4"></script>
+    <script src="js/emergency-navigation.js?v=3.0.4"></script>
+    <script src="js/reference-point-manager.js?v=3.0.4"></script>
+    <script src="js/script.js?v=3.0.4"></script>
+ <script>
+        // Voice Navigation Integration
+        document.addEventListener('DOMContentLoaded', function() {
+            // Listen for room number input and provide voice guidance
+            const roomSearch = document.getElementById('room-search');
+            if (roomSearch) {
+                roomSearch.addEventListener('keyup', function(e) {
+                    if (e.key === 'Enter' && this.value.trim()) {
+                        activateVoiceNavigation(this.value.trim());
+                    }
+                });
+            }
+        });
+        
+        function activateVoiceNavigation(roomNumber) {
+            const numRoom = parseInt(roomNumber);
+            let floor = 'zg';
+            let floorText = '';
+            let roomRange = '';
+            
+            // Determine floor from room number
+            if (numRoom >= 100 && numRoom <= 135) {
+                floor = '1og';
+                floorText = 'ersten Obergeschoss';
+                roomRange = '100 bis 135';
+            }
+            else if (numRoom >= 200 && numRoom <= 249) {
+                floor = '2og';
+                floorText = 'zweiten Obergeschoss';
+                roomRange = '200 bis 249';
+            }
+            else if (numRoom >= 300 && numRoom <= 349) {
+                floor = '3og';
+                floorText = 'dritten Obergeschoss';
+                roomRange = '300 bis 349';
+            }
+            else if (numRoom >= 400 && numRoom <= 449) {
+                floor = '4og';
+                floorText = 'vierten Obergeschoss';
+                roomRange = '400 bis 449';
+            }
+            else if (numRoom >= 500 && numRoom <= 549) {
+                floor = '5og';
+                floorText = 'fünften Obergeschoss';
+                roomRange = '500 bis 549';
+            }
+            else if (numRoom >= 600 && numRoom <= 646) {
+                floor = '6og';
+                floorText = 'sechsten Obergeschoss';
+                roomRange = '600 bis 646';
+            }
+            else if (numRoom === 700 || numRoom === 800) {
+                floor = 'zg';
+                floorText = 'Erdgeschoss';
+                roomRange = '';
+            }
+            
+            // Get navigation info
+            const navInfo = getNavigationInfo(floor, numRoom);
+            const language = navigator.language.startsWith('de') ? 'de' : 'en';
+            
+            // Get room coordinates if available
+            let roomCoords = null;
+            if (window.roomDatabase && window.roomDatabase[floor] && window.roomDatabase[floor][roomNumber]) {
+                roomCoords = window.roomDatabase[floor][roomNumber];
+            }
+            
+            const voiceMsg = getVoiceMessage(floor, roomNumber, language, roomCoords);
+            
+            // PRIJE NEGO ŠTO POŠALJEMO U TTS, ZAMIJENI "Zi" SA "Zimmer"
+            let ttsText = voiceMsg.text;
+            
+            // Zamijeni "Zi" sa "Zimmer" (pazi da ne zamijeni slučajno druge riječi)
+            ttsText = ttsText.replace(/\bZi\b/g, 'Zimmer');
+            ttsText = ttsText.replace(/\bzi\b/g, 'Zimmer');
+            
+            // Ako ima opis cijelog sprata sa svim sobama, zamijeni sa rasponom
+            if (floorText && roomRange) {
+                // Ovo je ključni dio - umjesto nabrajanja svih 50 soba, kaže raspon
+                const floorRangeText = `Sie befinden sich im ${floorText}. Die Zimmer auf dieser Etage sind von ${roomRange}.`;
+                
+                // Ako voiceMsg.text sadrži nabrajanje svih soba, zamijeni sa rasponom
+                if (voiceMsg.text.includes('Zimmer') && voiceMsg.text.length > 200) {
+                    ttsText = floorRangeText + ' ' + ttsText.split('. ').slice(-1)[0]; // Zadnji dio (specifično za sobu)
+                }
+            }
+            
+            // Display voice message
+            const notification = document.getElementById('notification');
+            if (notification) {
+                notification.innerHTML = `
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <h3 style="margin-top:0;">🎙️ Voice Guidance - Zimmer ${roomNumber}</h3>
+                        <p style="font-size: 16px; line-height: 1.6; white-space: pre-line;">${ttsText}</p>
+                        <button onclick="speakVoiceMessage('${ttsText.replace(/'/g, "\\'")}')" style="background: white; color: #667eea; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 10px;">
+                            <i class="fas fa-volume-up"></i> Vorlesen
+                        </button>
+                        <button onclick="this.parentElement.parentElement.style.display='none';" style="background: rgba(255,255,255,0.2); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-left: 10px; margin-top: 10px;">
+                            X Schließen
+                        </button>
+                    </div>
+                `;
+                notification.style.display = 'block';
+            }
+            
+            // Automatski pokreni govor
+            setTimeout(() => speakVoiceMessage(ttsText), 500);
+        }
+        
+        function speakVoiceMessage(text) {
+            // Dodatna zaštita za "Zi" u slučaju da je nešto promaklo
+            const safeText = text.replace(/\bZi\b/g, 'Zimmer').replace(/\bzi\b/g, 'Zimmer');
+            
+            const utterance = new SpeechSynthesisUtterance(safeText);
+            utterance.lang = navigator.language.startsWith('de') ? 'de-DE' : 'en-US';
+            utterance.rate = 0.9;
+            
+            // Pokušaj pronaći njemački glas
+            if (utterance.lang === 'de-DE') {
+                const voices = window.speechSynthesis.getVoices();
+                const germanVoice = voices.find(v => v.lang.includes('de'));
+                if (germanVoice) utterance.voice = germanVoice;
+            }
+            
+            window.speechSynthesis.speak(utterance);
+        }
+        
+        // Dodatna funkcija za testiranje
+        function testVoiceForRoom(roomNumber) {
+            activateVoiceNavigation(roomNumber);
+        }
+    </script>
+</body>
+</html>

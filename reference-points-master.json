@@ -1,0 +1,100 @@
+{
+  "AUFZUG_MAIN": {
+    "name": "Hauptaufzug",
+    "description": "Main elevator - all floors",
+    "floors": {
+      "zg": { "x": 39.55, "y": 88.00 },
+      "1og": { "x": 39.17, "y": 89.96 },
+      "2og": { "x": 39.55, "y": 88.00 },
+      "3og": { "x": 38.75, "y": 89.63 },
+      "4og": { "x": 39.55, "y": 88.00 },
+      "5og": { "x": 39.55, "y": 88.00 },
+      "6og": { "x": 39.55, "y": 88.00 }
+    }
+  },
+  "TH9": {
+    "name": "Treppenhaus 9",
+    "description": "Emergency stairs - all floors (EG to 6OG)",
+    "type": "fluchtweg",
+    "floors": {
+      "zg": { "x": 39.55, "y": 88.00 },
+      "1og": { "x": 42.42, "y": 90.58 },
+      "2og": { "x": 39.55, "y": 88.00 },
+      "3og": { "x": 42.08, "y": 90.00 },
+      "4og": { "x": 39.55, "y": 88.00 },
+      "5og": { "x": 39.55, "y": 88.00 },
+      "6og": { "x": 39.55, "y": 88.00 }
+    }
+  },
+  "TH2": {
+    "name": "Treppenhaus 2",
+    "description": "Emergency stairs - EG to 5OG ONLY (NOT 6OG)",
+    "type": "fluchtweg",
+    "maxFloor": "5og",
+    "locations": ["Beside rooms 207/307/407/507", "Next to Heidi Kabel conference"],
+    "floors": {
+      "zg": { "x": 22.49, "y": 73.00 },
+      "1og": { "x": 34.42, "y": 74.96 },
+      "2og": { "x": 22.49, "y": 73.00 },
+      "3og": { "x": 33.42, "y": 73.25 },
+      "4og": { "x": 22.49, "y": 73.00 },
+      "5og": { "x": 22.49, "y": 73.00 }
+    }
+  },
+  "TH7": {
+    "name": "Treppenhaus 7",
+    "description": "Stairs - all floors (1OG to 6OG), between rooms 227/228",
+    "type": "treppenhaus",
+    "locations": ["Between rooms 117/118 (1OG)", "Between rooms 227/228", "Between rooms 327/328", "Between rooms 427/428", "Between rooms 527/528", "Between rooms 627/628"],
+    "floors": {
+      "1og": { "x": 54.00, "y": 82.58 },
+      "2og": { "x": 54.67, "y": 82.13 },
+      "3og": { "x": 54.83, "y": 83.13 },
+      "4og": { "x": 54.67, "y": 82.13 },
+      "5og": { "x": 54.67, "y": 82.13 },
+      "6og": { "x": 54.67, "y": 82.13 }
+    }
+  },
+  "TH5": {
+    "name": "Treppenhaus 5",
+    "description": "Stairs - all floors (1OG to 6OG), between rooms 641/642",
+    "type": "treppenhaus",
+    "locations": ["Between rooms 129/128 (1OG)", "Between rooms 229/228", "Between rooms 329/328", "Between rooms 429/428", "Between rooms 529/528", "Between rooms 629/628", "Near SPA area"],
+    "floors": {
+      "1og": { "x": 56.75, "y": 65.63 },
+      "2og": { "x": 58.08, "y": 65.42 },
+      "3og": { "x": 57.50, "y": 66.50 },
+      "4og": { "x": 58.08, "y": 65.42 },
+      "5og": { "x": 58.08, "y": 65.42 },
+      "6og": { "x": 58.08, "y": 65.42 }
+    }
+  },
+  "AUFZUG_SPA": {
+    "name": "SPA & GYM Aufzug",
+    "description": "Spa/Gym elevator - 6OG to Keller (basement), beside rooms 107/207/307/407/507/617",
+    "type": "aufzug",
+    "maxFloor": "6og",
+    "minFloor": "kg",
+    "floors": {
+      "1og": { "x": 52.00, "y": 90.46 },
+      "2og": { "x": 51.83, "y": 88.79 },
+      "3og": { "x": 51.50, "y": 90.13 },
+      "4og": { "x": 51.83, "y": 88.79 },
+      "5og": { "x": 51.83, "y": 88.79 },
+      "6og": { "x": 51.83, "y": 88.79 }
+    }
+  },
+  "FRISEUR": {
+    "name": "Friseursalon Fr. Volpato",
+    "description": "Hairdresser - runs from EG to 5OG ONLY (NOT 6OG)",
+    "type": "poi",
+    "maxFloor": "5og",
+    "floors": {
+      "1og": { "x": 22.49, "y": 73.00 },
+      "2og": { "x": 22.49, "y": 73.00 },
+      "3og": { "x": 22.49, "y": 73.00 },
+      "4og": { "x": 22.49, "y": 73.00 },
+      "5og": { "x": 22.49, "y": 73.00 }
+    }
+  }
+}
