@@ -1009,6 +1009,56 @@ function initVoiceAssistant() {
         console.log('🎙️ Reichshof Voice Assistant ready');
     }, 100);
 }
+/****************************************************
+ * 🔊 AUTOMATSKI AUDIO TESTER (BajteBrate Edition)
+ * Ubaciti odmah iznad: // Fallback za starije browsere
+ ****************************************************/
+
+async function testSystemSounds(audioAssets) {
+    console.log("🎧 Pokrećem automatski audio test...");
+
+    const systemSounds = audioAssets.system;
+    const results = {};
+
+    for (const [type, url] of Object.entries(systemSounds)) {
+        console.log(`\n🔍 Testiram zvuk: ${type}`);
+        console.log(`URL: ${url}`);
+
+        try {
+            // 1. Provjera da li URL postoji
+            const response = await fetch(url, { method: "HEAD" });
+
+            if (!response.ok) {
+                results[type] = `❌ URL greška: HTTP ${response.status}`;
+                console.error(results[type]);
+                continue;
+            }
+
+            // 2. Provjera MIME tipa
+            const contentType = response.headers.get("Content-Type");
+            console.log(`MIME tip: ${contentType}`);
+
+            if (!contentType || !contentType.startsWith("audio")) {
+                results[type] = `⚠️ Pogrešan MIME tip: ${contentType}`;
+                console.warn(results[type]);
+            }
+
+            // 3. Pokušaj puštanja zvuka
+            const audio = new Audio(url);
+            await audio.play();
+            results[type] = "✅ Zvuk uspješno pušten";
+
+        } catch (err) {
+            results[type] = `❌ Neuspješno puštanje: ${err}`;
+            console.error(results[type]);
+        }
+    }
+
+    console.log("\n📊 REZULTATI AUDIO TESTA:");
+    console.table(results);
+
+    return results;
+}
 
 // Fallback za starije browsere
 window.speakVoiceMessage = function(text) {
@@ -1019,4 +1069,5 @@ window.speakVoiceMessage = function(text) {
         utterance.lang = 'de-DE';
         speechSynthesis.speak(utterance);
     }
+
 };
